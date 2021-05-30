@@ -29,5 +29,20 @@ declare module "styled-components" {
     typography: Typography;
     zIndex: ZIndex;
     unstableStrictMode?: boolean;
+
+    spacings: {
+      xxsmall: string;
+      xsmall: string;
+      small: string;
+      medium: string;
+      large: string;
+      xlarge: string;
+      xxlarge: string;
+    };
+
+    gridLayout: {
+      container: string;
+      gutter: string;
+    };
   }
 }
