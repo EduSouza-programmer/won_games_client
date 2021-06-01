@@ -10,4 +10,5 @@ module.exports = {
   moduleNameMapper: {
     '@/(.*)': '<rootDir>/src/$1',
   },
+  modulePaths: ['<rootDir>/src/', '<rootDir>/.jest'],
 };
