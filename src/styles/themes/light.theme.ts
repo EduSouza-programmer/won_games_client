@@ -112,6 +112,15 @@ export default responsiveFontSizes(
       modal: 40,
       alwaysOnTop: 50,
     },
+    breakpoints: {
+      values: {
+        xs: 0,
+        sm: 450,
+        md: 768,
+        lg: 1170,
+        xl: 1920,
+      },
+    },
     overrides: {
       MuiCssBaseline: {
         "@global": {
