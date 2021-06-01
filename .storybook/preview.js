@@ -1,6 +1,6 @@
 import ThemeProvider from '@/components/ThemeProvider';
 
-export const parameters = {
+/* export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
@@ -8,7 +8,7 @@ export const parameters = {
       date: /Date$/,
     },
   },
-};
+}; */
 
 export const decorators = [
   (Story) => (

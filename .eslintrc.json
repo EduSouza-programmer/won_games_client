@@ -67,6 +67,7 @@
 
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
-    "@typescript-eslint/stric-boolean-expressions": "off"
+    "@typescript-eslint/stric-boolean-expressions": "off",
+    "@typescript-eslint/no-non-null-assertion": "off"
   }
 }
