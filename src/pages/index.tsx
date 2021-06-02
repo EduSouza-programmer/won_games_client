@@ -1,9 +1,9 @@
-import Logo from "@/components/Logo";
+import Heading from "@/components/Heading";
 
 export default function Home() {
   return (
     <>
-      <Logo />
+      <Heading>ola aqui</Heading>
     </>
   );
 }
