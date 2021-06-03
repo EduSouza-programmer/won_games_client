@@ -28,6 +28,9 @@ declare module "@material-ui/core/styles/createMuiTheme" {
       container: string;
       gutter: string;
     };
+    border: {
+      radius: string;
+    };
   }
   export interface ThemeOptions {
     icons?: {
@@ -45,6 +48,9 @@ declare module "@material-ui/core/styles/createMuiTheme" {
     gridLayout?: {
       container: string;
       gutter: string;
+    };
+    border?: {
+      radius: string;
     };
   }
 }
