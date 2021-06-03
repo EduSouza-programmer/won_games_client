@@ -44,5 +44,8 @@ declare module "styled-components" {
       container: string;
       gutter: string;
     };
+    border: {
+      radius: string;
+    };
   }
 }

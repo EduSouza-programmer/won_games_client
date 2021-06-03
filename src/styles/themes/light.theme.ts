@@ -121,15 +121,22 @@ export default responsiveFontSizes(
         xl: 1920,
       },
     },
+    border: {
+      radius: "0.4rem",
+    },
     overrides: {
       MuiCssBaseline: {
         "@global": {
+          html: {
+            fontSize: "62.5%",
+          },
           button: {
             cursor: "pointer",
           },
           "@font-face": [fontPoppins300, fontPoppins400, fontPoppins600],
           body: {
             fontFamily: `"Poppins","Roboto", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "sans-serif"`,
+            fontSize: "1.6rem",
           },
           "*": {
             margin: 0,
