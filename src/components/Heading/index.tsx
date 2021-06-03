@@ -16,6 +16,9 @@ function Heading({
   return (
     <S.Wrapper color={color} lineLeft={lineLeft} lineBottom={lineBottom}>
       {children}
+      <>
+        <h1>initial refactory</h1>
+      </>
     </S.Wrapper>
   );
 }
