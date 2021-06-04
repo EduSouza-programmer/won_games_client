@@ -12,6 +12,14 @@ export default {
       options: ["white", "black"],
       control: { type: "radio" },
     },
+    size: {
+      options: ["small", "medium"],
+      control: { type: "select" },
+    },
+    lineColor: {
+      options: ["primary", "secondary"],
+      control: { type: "select" },
+    },
   },
 } as Meta;
 
@@ -20,4 +28,6 @@ export const Default: Story<HeadingProps> = (args) => <Heading {...args} />;
 Default.args = {
   children: "Most Populars",
   color: "black",
+  size: "small",
+  lineColor: "primary",
 };
