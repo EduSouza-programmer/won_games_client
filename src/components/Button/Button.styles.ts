@@ -7,7 +7,7 @@ type wrapperProps = { hasIcon: boolean } & Omit<ButtonProps, "children">;
 const wrapperModifiers = {
   small: (theme: DefaultTheme) => css`
     height: 3rem;
-    font-size: ${theme.typography.fontSizes.xsmall};
+    font-size: ${theme.typography.fontSizes.small};
     padding: ${theme.spacings.xxsmall};
   `,
   medium: (theme: DefaultTheme) => css`
@@ -24,10 +24,6 @@ const wrapperModifiers = {
     width: 100%;
   `,
   withIcon: (theme: DefaultTheme) => css`
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
     svg {
       width: 1.5em;
 
@@ -44,6 +40,15 @@ export const Wrapper = styled.button<wrapperProps>`
     color: ${theme.palette.white.main};
     border: 0;
     border-radius: ${theme.border.radius};
+    text-decoration: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background: linear-gradient(180deg, #e35565 0%, #d958a6 50%);
+    }
 
     ${!!size && wrapperModifiers[size](theme)}
 

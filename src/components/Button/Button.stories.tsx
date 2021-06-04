@@ -6,6 +6,12 @@ import Button, { ButtonProps } from ".";
 export default {
   title: "Button",
   component: Button,
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile1",
+    },
+    layout: "fullscreen",
+  },
   argTypes: {
     children: {
       type: "string",
@@ -16,18 +22,76 @@ export default {
       control: { type: "select" },
       defaultValue: "medium",
     },
+
     icon: {
-      type: "",
+      control: false,
+    },
+
+    as: {
+      control: false,
     },
   },
 } as Meta;
 
-export const Default: Story<ButtonProps> = (args) => <Button {...args} />;
+export const Default: Story<ButtonProps> = (args) => (
+  <div
+    style={{
+      maxWidth: "100%",
+      minHeight: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    <Button {...args} />
+  </div>
+);
 
-export const WithIcon: Story<ButtonProps> = (args) => <Button {...args} />;
+export const WithIcon: Story<ButtonProps> = (args) => (
+  <div
+    style={{
+      maxWidth: "100%",
+      minHeight: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    <Button {...args} />
+  </div>
+);
 
 WithIcon.args = {
-  size: "small",
   children: "Buy Now",
   icon: <AddShoppingCart />,
+};
+
+export const AsLink: Story<ButtonProps> = (args) => (
+  <div
+    style={{
+      maxWidth: "100%",
+      minHeight: "100vh",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    <Button {...args} />
+  </div>
+);
+
+AsLink.args = {
+  size: "large",
+  children: "Buy Now",
+  as: "a",
+  href: "/link",
+};
+
+AsLink.argTypes = {
+  as: {
+    control: false,
+  },
+  href: {
+    control: false,
+  },
 };
