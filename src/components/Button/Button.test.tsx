@@ -24,7 +24,7 @@ describe("<Button />", () => {
     expect(screen.getByRole("button", { name: /buy now/i })).toHaveStyle({
       height: "3rem",
       padding: "0.8rem",
-      "font-size": "1.2rem",
+      "font-size": "1.4rem",
     });
   });
 
@@ -48,15 +48,25 @@ describe("<Button />", () => {
 
   it("should render an icon version", () => {
     renderWithTheme(
-      <Button icon={<AddShoppingCart role="img" aria-label="won game" />}>
-        render icon version done
+      <Button icon={<AddShoppingCart data-testid="icon" />}>
+        render icon version
       </Button>
     );
 
-    expect(screen.getByText(/render icon version done/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/won game/i)).toBeInTheDocument();
-    expect(screen.getByLabelText(/won game/i).parentElement).toHaveTextContent(
-      /render icon version done/i
+    expect(screen.getByText(/render icon version/i)).toBeInTheDocument();
+    expect(screen.getByTestId(/icon/i)).toBeInTheDocument();
+  });
+
+  it("should render Button as a link", () => {
+    renderWithTheme(
+      <Button as="a" href="/link">
+        Buy now
+      </Button>
+    );
+
+    expect(screen.getByRole("link", { name: /buy now/i })).toHaveAttribute(
+      "href",
+      "/link"
     );
   });
 });
