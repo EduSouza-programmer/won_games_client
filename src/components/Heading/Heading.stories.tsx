@@ -23,9 +23,56 @@ export default {
   },
 } as Meta;
 
-export const Default: Story<HeadingProps> = (args) => <Heading {...args} />;
+export const Mobile: Story<HeadingProps> = (args) => (
+  <div
+    style={{
+      maxWidth: "100%",
+      minHeight: "100vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <Heading {...args} />
+  </div>
+);
 
-Default.args = {
+Mobile.args = {
+  children: "Most Populars",
+  color: "black",
+  size: "small",
+  lineColor: "primary",
+};
+
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: "mobile1",
+  },
+  layout: "fullscreen",
+};
+
+export const Desktop: Story<HeadingProps> = (args) => (
+  <div
+    style={{
+      maxWidth: "100%",
+      minHeight: "100vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <Heading {...args} />
+  </div>
+);
+
+Desktop.parameters = {
+  viewport: {
+    defaultViewport: "desktop",
+  },
+  layout: "fullscreen",
+};
+
+Desktop.args = {
   children: "Most Populars",
   color: "black",
   size: "small",
