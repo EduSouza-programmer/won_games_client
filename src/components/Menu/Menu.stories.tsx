@@ -19,7 +19,16 @@ Mobile.parameters = {
   },
 };
 
-export const Desktop: Story<MenuProps> = (args) => <Menu {...args} />;
+export const Desktop: Story<MenuProps> = (args) => (
+  <div
+    style={{
+      maxWidth: "130rem",
+      margin: "0 auto",
+    }}
+  >
+    <Menu {...args} />
+  </div>
+);
 
 Desktop.parameters = {
   viewport: {
