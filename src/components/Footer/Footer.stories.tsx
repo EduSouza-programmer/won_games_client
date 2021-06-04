@@ -6,4 +6,29 @@ export default {
   component: Footer,
 } as Meta;
 
-export const Default: Story = () => <Footer />;
+export const Mobile: Story = () => <Footer />;
+
+Mobile.parameters = {
+  viewport: {
+    defaultViewport: "mobile1",
+  },
+  controls: { hideNoControlsWarning: true },
+};
+
+export const Desktop: Story = () => (
+  <div
+    style={{
+      maxWidth: "130rem",
+      margin: "0 auto",
+    }}
+  >
+    <Footer />
+  </div>
+);
+
+Desktop.parameters = {
+  viewport: {
+    defaultViewport: "desktop",
+  },
+  controls: { hideNoControlsWarning: true },
+};
