@@ -106,4 +106,10 @@ describe("<GameCard />", () => {
       height: "2.6rem",
     });
   });
+
+  it("should render with match snapshot", () => {
+    const { container } = renderWithTheme(<GameCard {...propsRequired} />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
