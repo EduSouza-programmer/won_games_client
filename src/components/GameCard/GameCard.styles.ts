@@ -15,8 +15,8 @@ const ImageBoxModifiers = {
   shimmerEffect: () => css`
     background-image: linear-gradient(
       to right,
-      #f6f7f8 0%,
-      #edeef1 20%,
+      #ffffff 0%,
+      #dfdfdf 20%,
       #f6f7f8 40%,
       #f6f7f8 100%
     );
@@ -40,8 +40,8 @@ type ImageBoxProps = {
 
 export const ImageBox = styled.div<ImageBoxProps>`
   ${({ shimmerEffect }) => css`
-    height: 14rem;
     width: 100%;
+    min-height: 14rem;
     background-color: #f6f7f8;
 
     ${shimmerEffect && ImageBoxModifiers.shimmerEffect}
