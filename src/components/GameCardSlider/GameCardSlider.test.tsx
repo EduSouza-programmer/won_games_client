@@ -78,4 +78,10 @@ describe("<GameCardSlider />", () => {
       color: "#030517",
     });
   });
+
+  it("should render with match snapshot", () => {
+    const { container } = renderWithTheme(<GameCardSlider items={items} />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
