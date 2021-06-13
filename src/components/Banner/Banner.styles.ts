@@ -26,7 +26,57 @@ export const Wrapper = styled.div`
     `}
 `;
 
-type ImageProps = {
+const imageBoxModifiers = {
+  shimmerEffect: () => css`
+    background-image: linear-gradient(
+      to right,
+      #ffffff 0%,
+      #dfdfdf 20%,
+      #f6f7f8 40%,
+      #f6f7f8 100%
+    );
+    background-size: 80rem 23rem;
+    animation: placeholderShimmer 1s linear infinite forwards;
+
+    @keyframes placeholderShimmer {
+      0% {
+        background-position: -40rem 0;
+      }
+      100% {
+        background-position: 40rem 0;
+      }
+    }
+    ${media.greaterThan("medium")`
+      min-height: 58rem;
+
+    `}
+  `,
+};
+
+type ImageBox = {
+  shimmerEffect: boolean;
+};
+
+export const ImageBox = styled.div<ImageBox>`
+  ${({ theme, shimmerEffect }) => css`
+    width: 100%;
+    min-height: 23rem;
+    background-color: ${theme.palette.black.main};
+    display: flex;
+    justify-content: center;
+
+    ${shimmerEffect && imageBoxModifiers.shimmerEffect}
+
+    img {
+      width: 100%;
+      height: 100%;
+      min-height: 23rem;
+      object-fit: cover;
+    }
+  `}
+`;
+
+/* type ImageProps = {
   src: string;
 };
 
@@ -43,7 +93,7 @@ export const Image = styled.div<ImageProps>`
       height: 58rem;
     `}
   `}
-`;
+`; */
 
 export const Caption = styled.div`
   ${({ theme }) => css`
