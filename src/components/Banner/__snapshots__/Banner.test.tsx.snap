@@ -20,9 +20,9 @@ exports[`<Banner /> should render correctly 1`] = `
   -webkit-justify-content: center;
   -ms-flex-pack: center;
   justify-content: center;
-  height: 5rem;
-  font-size: 1.6rem;
-  padding: 0.8rem 4.0rem;
+  height: 4rem;
+  font-size: 1.4rem;
+  padding: 0.8rem 3.2rem;
 }
 
 .c5:hover {
@@ -35,11 +35,27 @@ exports[`<Banner /> should render correctly 1`] = `
 
 .c1 {
   width: 100%;
-  height: 23rem;
-  background-color: #EAEAEA;
-  background-image: url(https://source.unsplash.com/user/willianjusten/1042x580);
-  background-position: center center;
-  background-size: cover;
+  min-height: 23rem;
+  background-color: #030517;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  background-image: linear-gradient( to right,#ffffff 0%,#dfdfdf 20%,#f6f7f8 40%,#f6f7f8 100% );
+  background-size: 80rem 23rem;
+  -webkit-animation: placeholderShimmer 1s linear infinite forwards;
+  animation: placeholderShimmer 1s linear infinite forwards;
+}
+
+.c1 img {
+  width: 100%;
+  height: 100%;
+  min-height: 23rem;
+  object-fit: cover;
 }
 
 .c2 {
@@ -85,7 +101,7 @@ exports[`<Banner /> should render correctly 1`] = `
 
 @media (min-width:768px) {
   .c1 {
-    height: 58rem;
+    min-height: 58rem;
   }
 }
 
@@ -115,11 +131,13 @@ exports[`<Banner /> should render correctly 1`] = `
   class="c0"
 >
   <div
-    aria-label="Defy death"
     class="c1"
-    role="img"
-    src="https://source.unsplash.com/user/willianjusten/1042x580"
-  />
+  >
+    <img
+      alt="Defy death"
+      src="https://source.unsplash.com/user/willianjusten/1042x580"
+    />
+  </div>
   <div
     class="c2"
   >
