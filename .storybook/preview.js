@@ -30,6 +30,19 @@ export const parameters = {
       ...customViewports,
     },
   },
+  backgrounds: {
+    default: 'won-light',
+    values: [
+      {
+        name: 'won-light',
+        value: '#FAFAFA',
+      },
+      {
+        name: 'won-dark',
+        value: '#06092B',
+      },
+    ],
+  },
 };
 
 export const decorators = [

@@ -137,6 +137,7 @@ export default responsiveFontSizes(
           body: {
             fontFamily: `"Poppins","Roboto", "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", "sans-serif"`,
             fontSize: "1.6rem",
+            backgroundColor: "#06092B",
           },
           "*": {
             margin: 0,
@@ -145,6 +146,13 @@ export default responsiveFontSizes(
             WebkitFontSmoothing: "antialiased",
             MozOsxFontSmoothing: "grayscale",
           },
+          // já tem as regras abaixo
+          /*  "*::before": {
+            boxSizing: "border-box",
+          },
+          "*::after": {
+            boxSizing: "border-box",
+          }, */
         },
       },
     },
