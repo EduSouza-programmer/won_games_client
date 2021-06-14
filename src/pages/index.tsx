@@ -1,9 +1,5 @@
-import Heading from "@/components/Heading";
+import Home from "@/templates/Home";
 
-export default function Home() {
-  return (
-    <>
-      <Heading>ola aqui</Heading>
-    </>
-  );
+export default function Index() {
+  return <Home />;
 }
