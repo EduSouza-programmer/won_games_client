@@ -1,11 +1,11 @@
-import * as S from "./Container.styles";
+import styled, { css } from "styled-components";
 
-function Container() {
-  return (
-    <S.Wrapper>
-      <h1>Container</h1>
-    </S.Wrapper>
-  );
-}
-
-export default Container;
+export const Container = styled.div`
+  ${({ theme }) => css`
+    max-width: ${theme.gridLayout.container};
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: calc(${theme.gridLayout.gutter} / 2);
+    padding-right: calc(${theme.gridLayout.gutter} / 2);
+  `}
+`;
