@@ -4,7 +4,7 @@ import theme from "@/styles/themes/light.theme";
 import { Container } from ".";
 
 describe("<Container />", () => {
-  it("should render the heading", () => {
+  it("should render with correctly grid", () => {
     const { container } = renderWithTheme(
       <Container>
         <span>Won Games</span>
