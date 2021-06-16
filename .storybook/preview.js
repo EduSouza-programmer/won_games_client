@@ -34,6 +34,14 @@ export const parameters = {
     default: 'won-light',
     values: [
       {
+        name: 'light',
+        value: '#F8F8F8',
+      },
+      {
+        name: 'dark',
+        value: '#333333',
+      },
+      {
         name: 'won-light',
         value: '#FAFAFA',
       },
