@@ -9,7 +9,7 @@ exports[`<Highlight /> should render the headings and button 1`] = `
 
 .c0 {
   position: relative;
-  height: 23rem;
+  height: 27rem;
   display: grid;
   background-image: url(/img/red-dead-img.jpg);
   background-position: center center;
