@@ -5,6 +5,36 @@ import * as BannerStyles from "@/components/Banner/Banner.styles";
 
 export const Wrapper = styled.section`
   ${({ theme }) => css`
+    ${media.lessThan("huge")`
+      overflow-x: hidden;
+      overflow-y: hidden;
+    `}
+
+    ${media.lessThan("large")`
+      .slick-track,
+        .slick-list {
+        display: flex;
+      }
+
+      .slick-slide > div {
+        flex: 1 0 auto;
+        height: 100%;
+      }
+
+    `}
+
+    ${media.lessThan("medium")`
+      .slick-slide > div {
+        margin: 0 calc(${theme.spacings.xxsmall} + 3px);
+
+      }
+
+      .slick-list {
+        margin: 0 calc((${theme.spacings.xxsmall} + 3px) * -1);
+      }
+    `}
+
+
     .slick-list {
       cursor: pointer;
     }
@@ -41,18 +71,12 @@ export const Wrapper = styled.section`
     ${media.greaterThan("medium")`
 
       ${BannerStyles.Wrapper} {
-          max-width: 90%;
+          max-width: 80%;
           margin: 0 auto;
         }
     `}
 
     ${media.greaterThan("large")`
-
-      ${BannerStyles.Wrapper} {
-        max-width: 90%;
-        margin: 0 auto;
-      }
-
       .slick-dots {
         position: absolute;
         right: 0;
@@ -62,8 +86,16 @@ export const Wrapper = styled.section`
         margin:0;
 
         li {
-          margin: ${theme.spacings.xxsmall} 0;
+            margin: ${theme.spacings.xxsmall} 0;
+          }
         }
+
+        .slick-slide > div {
+        margin: calc(${theme.spacings.xxsmall} + 3px) 0;
+        }
+
+        .slick-list {
+        margin: calc((${theme.spacings.xxsmall} + 3px) * -1) 0;
       }
 
     `}
