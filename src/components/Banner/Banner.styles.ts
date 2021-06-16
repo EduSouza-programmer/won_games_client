@@ -5,6 +5,8 @@ import * as RibbonStyles from "@/components/Ribbon/Ribbon.styles";
 
 export const Wrapper = styled.div`
   position: relative;
+  width: 100%;
+  height: 100%;
 
   ${media.lessThan("medium")`
 
@@ -28,6 +30,7 @@ export const Wrapper = styled.div`
 
 const imageBoxModifiers = {
   shimmerEffect: () => css`
+    height: calc(100% - 40%);
     background-image: linear-gradient(
       to right,
       #ffffff 0%,
@@ -35,7 +38,7 @@ const imageBoxModifiers = {
       #f6f7f8 40%,
       #f6f7f8 100%
     );
-    background-size: 80rem 23rem;
+    background-size: 80rem 58rem;
     animation: placeholderShimmer 1s linear infinite forwards;
 
     @keyframes placeholderShimmer {
@@ -46,8 +49,14 @@ const imageBoxModifiers = {
         background-position: 40rem 0;
       }
     }
+
     ${media.greaterThan("medium")`
-      min-height: 58rem;
+      height: 100%;
+
+    `}
+
+    ${media.greaterThan("large")`
+      height: 58rem;
 
     `}
   `,
@@ -59,11 +68,24 @@ type ImageBox = {
 
 export const ImageBox = styled.div<ImageBox>`
   ${({ theme, shimmerEffect }) => css`
-    width: 100%;
+    max-width: 104rem;
+    max-height: 58rem;
+    width: auto;
+    height: auto;
     min-height: 23rem;
-    background-color: ${theme.palette.black.main};
+
     display: flex;
     justify-content: center;
+    background-color: ${theme.palette.black.main};
+
+    ${media.greaterThan("large")`
+      height: 58rem;
+
+    `}
+
+    ${media.greaterThan("medium")`
+        border-radius: 0 0 ${theme.border.radius} ${theme.border.radius};
+    `}
 
     ${shimmerEffect && imageBoxModifiers.shimmerEffect}
 
@@ -72,6 +94,10 @@ export const ImageBox = styled.div<ImageBox>`
       height: 100%;
       min-height: 23rem;
       object-fit: cover;
+
+      ${media.greaterThan("medium")`
+        border-radius: 0 0 ${theme.border.radius} ${theme.border.radius};
+    `}
     }
   `}
 `;
@@ -98,6 +124,8 @@ export const Image = styled.div<ImageProps>`
 export const Caption = styled.div`
   ${({ theme }) => css`
     width: 100%;
+    height: 100%;
+
     background-color: rgba(0, 0, 0, 0.7);
     padding: ${theme.spacings.small};
     ${media.greaterThan("medium")`
@@ -106,6 +134,7 @@ export const Caption = styled.div`
       position: absolute;
       bottom: 0;
       left: 0;
+      height: auto;
     `}
   `}
 `;
