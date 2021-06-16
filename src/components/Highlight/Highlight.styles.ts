@@ -8,7 +8,7 @@ type WrapperProps = Pick<HighlightProps, "backgroundImage" | "alignment">;
 export const FloatImage = styled.img`
   ${({ theme }) => css`
     z-index: ${theme.zIndex.base};
-    max-height: 23rem;
+    max-height: 27rem;
     max-width: 100%;
     grid-area: floatimage;
     align-self: end;
@@ -53,7 +53,7 @@ const wrapperModifiers = {
 export const Wrapper = styled.section<WrapperProps>`
   ${({ backgroundImage, alignment }) => css`
     position: relative;
-    height: 23rem;
+    height: 27rem;
     display: grid;
 
     background-image: url(${backgroundImage});

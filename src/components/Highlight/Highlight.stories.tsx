@@ -1,4 +1,6 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
+
+import data from "./Highlight.mock";
 import Highlight, { HighlightProps } from ".";
 
 export default {
@@ -10,13 +12,7 @@ export default {
       control: { type: "select" },
     },
   },
-  args: {
-    title: "Read Dead it's back",
-    subtitle: "Come see John's new adventures",
-    buttonLabel: "Buy now",
-    buttonLink: "https://any",
-    backgroundImage: "/img/red-dead-img.jpg",
-  },
+  args: { ...data },
   parameters: {
     layout: "fullscreen",
   },
