@@ -30,10 +30,17 @@ function Banner({
   const [shimmer, setShimmer] = useState(true);
   const theme = useTheme();
   const matchMobile = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
     <S.Wrapper>
       <S.ImageBox shimmerEffect={shimmer}>
-        <img src={img} alt={title} onLoad={() => setShimmer(false)} />
+        <img
+          src={img}
+          alt={title}
+          onLoad={() => {
+            setShimmer(false);
+          }}
+        />
       </S.ImageBox>
       {/* <S.Image src={img} role="img" aria-label={title} /> */}
       <S.Caption>
