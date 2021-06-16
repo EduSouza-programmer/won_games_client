@@ -13,30 +13,51 @@ const settings: SliderSettings = {
   prevArrow: <ArrowLeft aria-label="previous games" />,
   responsive: [
     {
-      breakpoint: 370,
+      breakpoint: 1375,
       settings: {
-        slidesToShow: 1.1,
-        arrows: false,
-      },
-    },
-    {
-      breakpoint: 570,
-      settings: {
-        slidesToShow: 1.2,
+        slidesToShow: 3.2,
         arrows: false,
       },
     },
     {
       breakpoint: 1024,
       settings: {
+        slidesToShow: 3.1,
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 940,
+      settings: {
         slidesToShow: 2.2,
         arrows: false,
       },
     },
     {
-      breakpoint: 1375,
+      breakpoint: 620,
       settings: {
-        slidesToShow: 3.2,
+        slidesToShow: 1.2,
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 619,
+      settings: {
+        slidesToShow: 1.4,
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 510,
+      settings: {
+        slidesToShow: 1.2,
+        arrows: false,
+      },
+    },
+    {
+      breakpoint: 370,
+      settings: {
+        slidesToShow: 1.1,
         arrows: false,
       },
     },
