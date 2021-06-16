@@ -25,7 +25,7 @@ export default {
     buttonLink: "/games/defy-death",
   },
   parameters: {
-    layout: "centered",
+    layout: "fullscreen",
     backgrounds: {
       default: "dark",
     },
@@ -82,13 +82,32 @@ MobileWithRibbon.args = {
 };
 
 export const Desktop: Story<BannerProps> = (args) => (
-  <div style={{ width: "104rem", margin: "0 auto" }}>
+  <div
+    style={{
+      minHeight: "100vh",
+      maxWidth: "104rem",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      margin: "0 auto",
+    }}
+  >
     <Banner {...args} />
   </div>
 );
 
 export const DesktopWithRibbon: Story<BannerProps> = (args) => (
-  <div style={{ width: "104rem", margin: "0 auto" }}>
+  <div
+    style={{
+      minHeight: "100vh",
+      maxWidth: "104rem",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      margin: "0 auto",
+      padding: "30px",
+    }}
+  >
     <Banner {...args} />
   </div>
 );
