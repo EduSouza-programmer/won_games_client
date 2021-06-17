@@ -13,6 +13,7 @@ export default {
       defaultValue: "TRY IT",
     },
     labelFor: {
+      control: false,
       defaultValue: "TRY IT",
     },
     onCheck: { action: "checked" },
@@ -52,7 +53,7 @@ export const Default: Story<CheckboxProps> = (args) => (
         height: "10rem",
       }}
     >
-      <Checkbox label="Action" labelFor="action" isChecked />
+      <Checkbox label="Action" labelFor="action" checked />
 
       <Checkbox label="Adventure" labelFor="adventure" />
 

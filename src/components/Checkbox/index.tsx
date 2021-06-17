@@ -1,4 +1,4 @@
-import { useState, useCallback, InputHTMLAttributes } from "react";
+import { useCallback, InputHTMLAttributes, useRef } from "react";
 import * as S from "./Checkbox.styles";
 
 export type CheckboxProps = {
@@ -6,7 +6,8 @@ export type CheckboxProps = {
   labelFor?: string;
   labelColor?: "black" | "white";
   onCheck?: (status: boolean) => void;
-  isChecked?: boolean;
+  // isChecked?: boolean;
+  checked?: boolean;
   value?: string | ReadonlyArray<string> | number;
 } & InputHTMLAttributes<HTMLInputElement>;
 
@@ -15,11 +16,12 @@ function Checkbox({
   labelFor = "",
   labelColor = "white",
   onCheck,
-  isChecked = false,
+  // isChecked,
+  checked,
   value,
   ...props
 }: CheckboxProps) {
-  const [checked, setChecked] = useState(isChecked);
+  /* const [checked, setChecked] = useState(isChecked);
 
   const onChange = useCallback(() => {
     const toogle = !checked;
@@ -28,7 +30,15 @@ function Checkbox({
     if (onCheck) {
       onCheck(toogle);
     }
-  }, [onCheck, checked]);
+  }, [onCheck, checked]); */
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const onChange = useCallback(() => {
+    if (onCheck) {
+      onCheck(!!inputRef.current?.checked);
+    }
+  }, [onCheck]);
 
   return (
     <S.Wrapper>
@@ -36,8 +46,10 @@ function Checkbox({
         onChange={onChange}
         id={labelFor}
         type="checkbox"
-        checked={checked}
+        ref={inputRef}
         value={value}
+        defaultChecked={checked}
+        // checked={checked}
         {...props}
       />
       {!!label && (

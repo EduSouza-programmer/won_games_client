@@ -5,12 +5,16 @@ import userEvent from "@testing-library/user-event";
 import Checkbox from ".";
 
 describe("<Checkbox />", () => {
-  it("should render the heading", () => {
-    renderWithTheme(<Checkbox label="checkbox label" labelFor="check" />);
+  it("should render with label", () => {
+    const { container } = renderWithTheme(
+      <Checkbox label="checkbox label" labelFor="check" />
+    );
 
     expect(screen.getByRole("checkbox")).toBeInTheDocument();
     expect(screen.getByLabelText(/checkbox label/i)).toBeInTheDocument();
     expect(screen.getByText(/checkbox label/i)).toHaveAttribute("for", "check");
+
+    expect(container.firstChild).toMatchSnapshot();
   });
 
   it("should render without label", () => {
@@ -56,7 +60,7 @@ describe("<Checkbox />", () => {
   it("should dispatch onCheck called with false when isChecked passed", async () => {
     const onCheck = jest.fn();
 
-    renderWithTheme(<Checkbox label="checkbox" onCheck={onCheck} isChecked />);
+    renderWithTheme(<Checkbox label="checkbox" onCheck={onCheck} checked />);
 
     userEvent.click(screen.getByRole("checkbox"));
 
