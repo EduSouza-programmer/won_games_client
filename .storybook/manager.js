@@ -1,7 +1,6 @@
 import { addons } from '@storybook/addons';
-import myTheme from './myTheme'
 
-
+import myTheme from './myTheme';
 
 addons.setConfig({
   isFullscreen: false,
@@ -14,7 +13,7 @@ addons.setConfig({
   selectedPanel: undefined,
   initialActive: 'sidebar',
   sidebar: {
-    showRoots: false,
+    showRoots: true,
     collapsedRoots: ['other'],
   },
 });
