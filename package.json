@@ -14,6 +14,7 @@
     "test:ci": "yarn test --bail --coverage",
     "test:watchFull": "yarn test --bail --coverage --findRelatedTests",
     "storybook": "start-storybook -s ./public -p 6006",
+    "storybook:cleancache": "start-storybook -s ./public -p 6006 --no-manager-cache",
     "build-storybook": "build-storybook -s ./public",
     "generate:component": "yarn plop --plopfile ./generators/component/plopfile.js",
     "commit": "git commit",
