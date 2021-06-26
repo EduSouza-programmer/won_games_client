@@ -18,7 +18,8 @@
     "build-storybook": "build-storybook -s ./public",
     "generate:component": "yarn plop --plopfile ./generators/component/plopfile.js",
     "commit": "git commit",
-    "commit:all": "git add --all && git commit -a"
+    "commit:all": "git add --all && git commit -a",
+    "clean-install": "rm -rf node_modules/ && yarn cache clean && yarn install --pure-lockfile"
   },
   "lint-staged": {
     "src/**/*": [
@@ -29,7 +30,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.1",
     "@material-ui/icons": "^4.11.2",
-    "next": "10.2.3",
+    "next": "11.0.1",
     "next-pwa": "^5.2.21",
     "polished": "^4.1.3",
     "react": "17.0.2",
@@ -42,6 +43,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-typescript": "^7.13.0",
+    "@next/eslint-plugin-next": "^11.0.1",
     "@storybook/addon-actions": "^6.3",
     "@storybook/addon-essentials": "^6.3",
     "@storybook/addon-links": "^6.3",
@@ -49,7 +51,7 @@
     "@storybook/addon-viewport": "^6.3",
     "@storybook/react": "^6.3",
     "@testing-library/jest-dom": "^5.12.0",
-    "@testing-library/react": "^11.2.7",
+    "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.9",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.1",
@@ -74,7 +76,7 @@
     "jest-styled-components": "^7.0.4",
     "lint-staged": "^11.0.0",
     "plop": "^2.7.4",
-    "prettier": "2.3.0",
+    "prettier": "2.3.2",
     "typescript": "^4.3.2"
   }
 }
