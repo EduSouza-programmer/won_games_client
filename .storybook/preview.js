@@ -2,6 +2,16 @@ import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 import ThemeProvider from '@/components/ThemeProvider';
 
+
+// para resolver Imagem next no storybook
+import * as NextImage from 'next/image';
+
+const OriginalNextImage = NextImage.default;
+Object.defineProperty(NextImage, 'default', {
+  configurable: true,
+  value: (props) => <OriginalNextImage {...props} unoptimized />,
+});
+
 /* export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
