@@ -1,18 +1,15 @@
 {
-  "presets": [
-    "next/babel",
-    "@babel/preset-typescript"
-  ],
+  "presets": ["next/babel", "@babel/preset-typescript"],
   "plugins": [
     [
       "babel-plugin-styled-components",
       {
-        "preprocess": false,
+        // "preprocess": false,
         "srr": true,
-        "displayName": true,
-        "minify": true,
+        "displayName": true
+       /*  "minify": true,
         "pure": true,
-        "transpileTemplateLiterals": true
+        "transpileTemplateLiterals": true */
       }
     ]
   ],
