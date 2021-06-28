@@ -90,4 +90,38 @@ describe("<Button />", () => {
       }
     );
   });
+
+  it("should render resposive size when passed", () => {
+    renderWithTheme(
+      <Button
+        resposiveSizes={{ small: "small", medium: "medium", large: "large" }}
+      >
+        Buy Now
+      </Button>
+    );
+
+    expect(screen.getByRole("button", { name: /buy now/i })).toHaveStyleRule(
+      "height",
+      "3rem",
+      {
+        media: "(min-width:450px)",
+      }
+    );
+
+    expect(screen.getByRole("button", { name: /buy now/i })).toHaveStyleRule(
+      "height",
+      "4rem",
+      {
+        media: "(min-width:768px)",
+      }
+    );
+
+    expect(screen.getByRole("button", { name: /buy now/i })).toHaveStyleRule(
+      "height",
+      "5rem",
+      {
+        media: "(min-width:1170px)",
+      }
+    );
+  });
 });
