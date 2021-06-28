@@ -1,8 +1,10 @@
-import { useState } from "react";
+import Image from "next/image";
+// import { useState } from "react";
 import Ribbon, { RibbonSizes, RibbonColors } from "@/components/Ribbon";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useTheme from "@material-ui/core/styles/useTheme";
 
+import Heading from "@/components/Heading";
 import Button from "@/components/Button";
 import * as S from "./Banner.styles";
 
@@ -27,24 +29,31 @@ function Banner({
   ribbonColor = "primary",
   ribbonSize = "normal",
 }: BannerProps) {
-  const [shimmer, setShimmer] = useState(true);
+  // const [shimmer, setShimmer] = useState(true);
   const theme = useTheme();
   const matchMobile = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <S.Wrapper>
-      <S.ImageBox shimmerEffect={shimmer}>
-        <img
+      <S.ImageBox /* shimmerEffect={shimmer */>
+        <Image
+          width={1040}
+          height={580}
+          placeholder="blur"
+          blurDataURL={img}
           src={img}
           alt={title}
-          onLoad={() => {
+          /*   onLoad={() => {
             setShimmer(false);
-          }}
+          }} */
         />
       </S.ImageBox>
       {/* <S.Image src={img} role="img" aria-label={title} /> */}
       <S.Caption>
-        <S.Title>{title}</S.Title>
+        {/*  <S.Title>{title}</S.Title> */}
+        <Heading responsiveSize={{ minFontSizes: 18, maxFontSizes: 30 }}>
+          {title}
+        </Heading>
         <S.Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
         <Button
           as="a"
