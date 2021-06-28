@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
     `}
 `;
 
-const imageBoxModifiers = {
+/* const imageBoxModifiers = {
   shimmerEffect: () => css`
     height: calc(100% - 40%);
     background-image: linear-gradient(
@@ -60,39 +60,25 @@ const imageBoxModifiers = {
 
     `}
   `,
-};
+}; */
 
-type ImageBox = {
+/* type ImageBox = {
   shimmerEffect: boolean;
-};
+}; */
 
-export const ImageBox = styled.div<ImageBox>`
-  ${({ theme, shimmerEffect }) => css`
-    max-width: 104rem;
-    max-height: 58rem;
-    width: auto;
-    height: auto;
+export const ImageBox = styled.div`
+  ${({ theme }) => css`
     min-height: 23rem;
 
     display: flex;
     justify-content: center;
     background-color: ${theme.palette.black.main};
 
-    ${media.greaterThan("large")`
-      height: 58rem;
-
-    `}
-
     ${media.greaterThan("medium")`
         border-radius: 0 0 ${theme.border.radius} ${theme.border.radius};
     `}
 
-    ${shimmerEffect && imageBoxModifiers.shimmerEffect}
-
     img {
-      width: 100%;
-      height: 100%;
-      min-height: 23rem;
       object-fit: cover;
 
       ${media.greaterThan("medium")`
@@ -128,6 +114,7 @@ export const Caption = styled.div`
 
     background-color: rgba(0, 0, 0, 0.7);
     padding: ${theme.spacings.small};
+    border-radius: 0 0 ${theme.border.radius} ${theme.border.radius};
     ${media.greaterThan("medium")`
       border-radius: 0 0 ${theme.border.radius} ${theme.border.radius};
       padding: ${theme.spacings.large};
@@ -139,7 +126,7 @@ export const Caption = styled.div`
   `}
 `;
 
-export const Title = styled.h2`
+/* export const Title = styled.h2`
   ${({ theme }) => css`
     font-size: ${theme.typography.fontSizes.large};
     font-weight: ${theme.typography.fontWeightBold};
@@ -150,13 +137,14 @@ export const Title = styled.h2`
 
     `}
   `}
-`;
+`; */
 
 export const Subtitle = styled.h3`
   ${({ theme }) => css`
     color: ${theme.palette.white.main};
     font-size: ${theme.typography.fontSizes.small};
     font-weight: ${theme.typography.fontWeightMedium};
+    padding-top: calc(${theme.spacings.xxsmall} / 2);
     padding-bottom: ${theme.spacings.xsmall};
     strong {
       color: ${theme.palette.primary.main};
