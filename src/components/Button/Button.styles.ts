@@ -1,11 +1,12 @@
 import styled, { css, DefaultTheme } from "styled-components";
+import media from "styled-media-query";
 import { darken } from "polished";
 
-import { ButtonProps } from ".";
+import { ButtonProps, Sizes } from ".";
 
-type wrapperProps = { hasIcon: boolean } & Pick<
+export type wrapperProps = { hasIcon: boolean } & Pick<
   ButtonProps,
-  "size" | "fullWidth" | "minimal"
+  "size" | "fullWidth" | "minimal" | "resposiveSizes"
 >;
 
 const wrapperModifiers = {
@@ -47,8 +48,43 @@ const wrapperModifiers = {
   `,
 };
 
+const wrapperModifiersResposive = {
+  responsiveSizes: (theme: DefaultTheme, resposiveSizes: Sizes) => css`
+    ${() => {
+      return Object.keys(resposiveSizes).map((size) => {
+        switch (size) {
+          case resposiveSizes.large:
+            return css`
+              ${media.greaterThan("large")`
+                ${wrapperModifiers.large(theme)}
+
+              `}
+            `;
+          case resposiveSizes.medium:
+            return css`
+              ${media.greaterThan("medium")`
+                  ${wrapperModifiers.medium(theme)}
+
+                `}
+            `;
+          case resposiveSizes.small:
+            return css`
+              ${media.greaterThan("small")`
+                ${wrapperModifiers.small(theme)}
+
+              `}
+            `;
+
+          default:
+            return css``;
+        }
+      });
+    }}
+  `,
+};
+
 export const Wrapper = styled.button<wrapperProps>`
-  ${({ theme, size, fullWidth, hasIcon, minimal }) => css`
+  ${({ theme, size, fullWidth, hasIcon, minimal, resposiveSizes }) => css`
     background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
     color: ${theme.palette.white.main};
     border: 0;
@@ -69,8 +105,11 @@ export const Wrapper = styled.button<wrapperProps>`
 
     ${fullWidth && wrapperModifiers.fullWidth}
 
-    ${!!hasIcon && wrapperModifiers.withIcon(theme)}
+    ${hasIcon && wrapperModifiers.withIcon(theme)}
 
     ${minimal && wrapperModifiers.minimal(theme)}
+
+    ${!!resposiveSizes &&
+    wrapperModifiersResposive.responsiveSizes(theme, resposiveSizes)}
   `}
 `;
