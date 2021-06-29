@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { Email } from "@styled-icons/material-outlined/Email";
 import { Lock } from "@styled-icons/material-outlined/Lock";
 
@@ -25,15 +24,15 @@ function FormSignIn() {
           icon={<Lock />}
         />
         <S.ForgotPassword>
-          <a href="#">Forgot your password?</a>
+          <a href="replace">Forgot your password?</a>
         </S.ForgotPassword>
         <Button size="large" fullWidth>
           Sign in now
         </Button>
         <S.FormLink>
           Don&apos;t have an account?&nbsp;
-          <Link href="/sign-up">
-            <a>Sign up</a>
+          <Link href="/sign-up" passHref>
+            <a href="replace">Sign up</a>
           </Link>
         </S.FormLink>
       </form>
