@@ -8,7 +8,7 @@ import * as S from "./GameCardSlider.styles";
 const settings: SliderSettings = {
   slidesToShow: 4,
   infinite: false,
-  lazyLoad: "ondemand",
+  lazyLoad: "progressive",
   nextArrow: <ArrowRight aria-label="next games" />,
   prevArrow: <ArrowLeft aria-label="previous games" />,
   responsive: [
