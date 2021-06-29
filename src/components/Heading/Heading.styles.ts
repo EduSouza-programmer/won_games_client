@@ -2,51 +2,135 @@ import styled, { css, DefaultTheme } from "styled-components";
 
 import media from "styled-media-query";
 
-import { HeadingProps, LineColor } from ".";
+import { HeadingProps, LineColor, ResponsiveFontSizes, Size } from ".";
 
 const wrapperModifiers = {
-  lineLeft: (theme: DefaultTheme, lineColor: LineColor) => css`
-    padding-left: ${theme.spacings.xxsmall};
-    border-left: 0.5rem solid ${theme.palette[lineColor!].main};
-  `,
+  lineLeft: (theme: DefaultTheme, lineColor: LineColor, size: Size) =>
+    css`
+      padding-left: ${theme.spacings.xxsmall};
+      border-style: solid;
+      border-color: ${theme.palette[lineColor].main};
+      border-width: 0;
 
-  lineBottom: (theme: DefaultTheme, lineColor: LineColor) => css`
+      ${() => {
+        switch (size) {
+          case "small":
+            return css`
+              border-left-width: 0.5rem;
+            `;
+          case "medium":
+            return css`
+              border-left-width: 0.7rem;
+            `;
+          case "huge":
+            return css`
+              border-left-width: 1rem;
+            `;
+
+          default:
+            return css`
+              border-left-width: 0.5rem;
+            `;
+        }
+      }}
+    `,
+
+  lineBottom: (theme: DefaultTheme, lineColor: LineColor, size: Size) => css`
     position: relative;
 
     &::after {
+      content: "";
       position: absolute;
       left: 0;
       bottom: -0.7rem;
-      content: "";
-      width: 5rem;
-      border-top: 0.5rem solid ${theme.palette[lineColor!].main};
+
+      border-style: solid;
+      border-color: ${theme.palette[lineColor].main};
+      border-width: 0;
     }
+
+    ${() => {
+      switch (size) {
+        case "small":
+          return css`
+            &::after {
+              border-top-width: 0.5rem;
+              width: 3rem;
+            }
+          `;
+        case "medium":
+          return css`
+            &::after {
+              border-top-width: 0.7rem;
+              width: 5rem;
+            }
+          `;
+        case "huge":
+          return css`
+            &::after {
+              border-top-width: 1rem;
+              width: 7rem;
+            }
+          `;
+
+        default:
+          return css`
+            &::after {
+              border-top-width: 0.5rem;
+              width: 5rem;
+            }
+          `;
+      }
+    }}
   `,
 
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.typography.fontSizes.medium};
-
-    ::after {
-      width: 3rem;
-    }
   `,
 
   medium: (theme: DefaultTheme) => css`
-    font-size: ${theme.typography.fontSizes.xlarge};
+    font-size: calc(${theme.typography.fontSizes.xlarge} + 4px);
 
     ${media.greaterThan("medium")`
       font-size: ${theme.typography.fontSizes.xxlarge};
 
-`}
+    `}
+  `,
+
+  huge: (theme: DefaultTheme) => css`
+    font-size: ${theme.typography.fontSizes.huge};
+  `,
+
+  responsiveSize: (obj: ResponsiveFontSizes) => css`
+    font-size: calc(
+      ${obj.minFontSizes}px + (${obj.maxFontSizes} - ${obj.minFontSizes}) *
+        ((100vw - 320px) / (1920 - 320))
+    );
+
+    ${obj.isNoWrapperText &&
+    css`
+      white-space: nowrap;
+    `}
   `,
 };
 
 export const Wrapper = styled.h2<HeadingProps>`
-  ${({ theme, color, lineLeft, lineBottom, size, lineColor }) => css`
+  ${({
+    theme,
+    color,
+    lineLeft,
+    lineBottom,
+    size,
+    lineColor,
+    responsiveSize,
+  }) => css`
     color: ${theme.palette[color!].main};
 
-    ${lineLeft && wrapperModifiers.lineLeft(theme, lineColor)}
-    ${lineBottom && wrapperModifiers.lineBottom(theme, lineColor)}
+    ${lineLeft && wrapperModifiers.lineLeft(theme, lineColor!, size)}
+    ${lineBottom && wrapperModifiers.lineBottom(theme, lineColor!, size)}
     ${!!size && wrapperModifiers[size](theme)}
+    ${!!responsiveSize &&
+    !size &&
+    wrapperModifiers.responsiveSize(responsiveSize)}
   `}
 `;
