@@ -1,4 +1,5 @@
-import { useState } from "react";
+import Image from "next/image";
+// import { useState } from "react";
 import { FavoriteBorder } from "@styled-icons/material-outlined/FavoriteBorder";
 import { Favorite } from "@styled-icons/material-outlined/Favorite";
 import { AddShoppingCart } from "@styled-icons/material-outlined/AddShoppingCart";
@@ -33,7 +34,7 @@ function GameCard({
   ribbonColor = "primary",
   ribbonSize = "small",
 }: GameCardProps) {
-  const [shimmer, setShimmer] = useState(true);
+  // const [shimmer, setShimmer] = useState(true);
   return (
     <S.Wrapper>
       {!!ribbon && (
@@ -41,8 +42,15 @@ function GameCard({
           {ribbon}
         </Ribbon>
       )}
-      <S.ImageBox shimmerEffect={shimmer}>
-        <img src={img} alt={title} onLoad={() => setShimmer(false)} />
+      <S.ImageBox /* shimmerEffect={shimmer} */>
+        <Image
+          layout="fill"
+          placeholder="blur"
+          blurDataURL={img}
+          src={img}
+          alt={title}
+          /*        onLoad={() => setShimmer(false)} */
+        />
       </S.ImageBox>
 
       <S.Content>
