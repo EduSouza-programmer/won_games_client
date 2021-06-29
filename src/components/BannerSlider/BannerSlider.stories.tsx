@@ -1,38 +1,62 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
+import styled from "styled-components";
 
 import items from "./BannerSlider.mock";
 import BannerSlider, { BannerSliderProps } from ".";
 
 export default {
-  title: "BannerSlider",
+  title: "Components/BannerSlider",
   component: BannerSlider,
   argTypes: {
-    items: {},
+    items: {
+      type: { required: true },
+      description: "Banner array",
+      control: { type: "object" },
+
+      table: {
+        category: "logics",
+        type: {
+          summary: "BannerProps[]",
+        },
+      },
+    },
   },
   args: {
     items,
   },
   parameters: {
+    viewport: {
+      defaultViewport: "figmaMobile",
+    },
     backgrounds: {
-      default: "dark",
+      default: "won-dark",
     },
     layout: "fullscreen",
-    controls: { hideNoControlsWarning: true },
   },
 } as Meta<BannerSliderProps>;
 
-export const Mobile: Story<BannerSliderProps> = (args) => (
-  <BannerSlider {...args} />
-);
+const WrapperCenter = styled.div`
+  display: grid;
+  align-items: center;
+  height: 100vh;
+  max-width: 104rem;
+  margin: 0 auto;
+`;
 
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: "mobile1",
-  },
-};
+export const Mobile: Story<BannerSliderProps> = (args) => (
+  <WrapperCenter>
+    <BannerSlider {...args} />
+  </WrapperCenter>
+);
 
 export const Desktop: Story<BannerSliderProps> = (args) => (
-  <div style={{ maxWidth: "130rem", margin: "0 auto" }}>
+  <WrapperCenter>
     <BannerSlider {...args} />
-  </div>
+  </WrapperCenter>
 );
+
+Desktop.parameters = {
+  viewport: {
+    defaultViewport: "desktop",
+  },
+};
