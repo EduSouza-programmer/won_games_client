@@ -1,14 +1,24 @@
 import * as S from "./Heading.styles";
 
-export type LineColor = "primary" | "secondary" | undefined;
+export type LineColor = "primary" | "secondary";
+
+export type Size = "small" | "medium" | "huge" | undefined;
+
+export type ResponsiveFontSizes = {
+  minFontSizes: number;
+  maxFontSizes: number;
+  isNoWrapperText?: boolean;
+};
 
 export type HeadingProps = {
   children: React.ReactNode;
   color?: "white" | "black";
   lineLeft?: boolean;
   lineBottom?: boolean;
-  size?: "small" | "medium";
+  size?: Size;
   lineColor?: LineColor;
+  responsiveSize?: ResponsiveFontSizes;
+  as?: React.ElementType;
 };
 
 function Heading({
@@ -16,8 +26,10 @@ function Heading({
   color = "white",
   lineLeft = false,
   lineBottom = false,
-  size = "medium",
+  size,
   lineColor = "primary",
+  responsiveSize,
+  as,
 }: HeadingProps) {
   return (
     <S.Wrapper
@@ -26,6 +38,8 @@ function Heading({
       lineLeft={lineLeft}
       lineBottom={lineBottom}
       lineColor={lineColor}
+      responsiveSize={responsiveSize}
+      as={as}
     >
       {children}
     </S.Wrapper>
