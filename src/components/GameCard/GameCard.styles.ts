@@ -10,7 +10,7 @@ export const Wrapper = styled.article`
     height: 100%;
   `}
 `;
-
+/*
 const ImageBoxModifiers = {
   shimmerEffect: () => css`
     background-image: linear-gradient(
@@ -32,23 +32,19 @@ const ImageBoxModifiers = {
       }
     }
   `,
-};
+}; */
 
-type ImageBoxProps = {
+/* type ImageBoxProps = {
   shimmerEffect: boolean;
-};
+}; */
 
-export const ImageBox = styled.div<ImageBoxProps>`
-  ${({ shimmerEffect }) => css`
-    width: 100%;
+export const ImageBox = styled.div`
+  ${() => css`
     min-height: 14rem;
     background-color: #f6f7f8;
-
-    ${shimmerEffect && ImageBoxModifiers.shimmerEffect}
+    position: relative;
 
     img {
-      width: 100%;
-      height: 100%;
       object-fit: cover;
     }
   `}
