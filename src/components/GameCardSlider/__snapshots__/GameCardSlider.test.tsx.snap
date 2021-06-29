@@ -58,18 +58,12 @@ exports[`<GameCardSlider /> should render with match snapshot 1`] = `
 }
 
 .c4 {
-  width: 100%;
   min-height: 14rem;
   background-color: #f6f7f8;
-  background-image: linear-gradient( to right,#ffffff 0%,#dfdfdf 20%,#f6f7f8 40%,#f6f7f8 100% );
-  background-size: 80rem 14rem;
-  -webkit-animation: placeholderShimmer 1s linear infinite forwards;
-  animation: placeholderShimmer 1s linear infinite forwards;
+  position: relative;
 }
 
 .c4 img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
@@ -396,6 +390,8 @@ exports[`<GameCardSlider /> should render with match snapshot 1`] = `
                 >
                   <img
                     alt="Poulation Zero 1"
+                    layout="fill"
+                    placeholder="blur"
                     src="https://source.unsplash.com/user/willianjusten/300x145"
                   />
                 </div>
@@ -497,6 +493,8 @@ exports[`<GameCardSlider /> should render with match snapshot 1`] = `
                 >
                   <img
                     alt="Poulation Zero 2"
+                    layout="fill"
+                    placeholder="blur"
                     src="https://source.unsplash.com/user/willianjusten/300x145"
                   />
                 </div>
@@ -598,6 +596,8 @@ exports[`<GameCardSlider /> should render with match snapshot 1`] = `
                 >
                   <img
                     alt="Poulation Zero 3"
+                    layout="fill"
+                    placeholder="blur"
                     src="https://source.unsplash.com/user/willianjusten/300x145"
                   />
                 </div>
@@ -699,6 +699,8 @@ exports[`<GameCardSlider /> should render with match snapshot 1`] = `
                 >
                   <img
                     alt="Poulation Zero 4"
+                    layout="fill"
+                    placeholder="blur"
                     src="https://source.unsplash.com/user/willianjusten/300x145"
                   />
                 </div>
