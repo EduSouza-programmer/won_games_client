@@ -2,7 +2,6 @@ import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 import ThemeProvider from '@/components/ThemeProvider';
 
-
 // para resolver Imagem next no storybook
 import * as NextImage from 'next/image';
 
@@ -24,13 +23,14 @@ Object.defineProperty(NextImage, 'default', {
 
 const customViewports = {
   figmaMobile: {
-    name: 'Project Figma Mobile',
+    name: 'Figma Mobile',
     styles: {
       width: '414px',
       height: '750px',
     },
     type: 'mobile',
   },
+  desktop: 'responsive',
 };
 
 export const parameters = {
