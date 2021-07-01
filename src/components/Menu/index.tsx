@@ -1,4 +1,5 @@
-import { useState } from "react";
+import Link from "next/link";
+import { useState, useCallback } from "react";
 import { ShoppingCart as ShoppingCartIcon } from "@styled-icons/material-outlined/ShoppingCart";
 import { Search as SearchIcon } from "@styled-icons/material-outlined/Search";
 import { Menu2 as MenuIcon } from "@styled-icons/remix-fill/Menu2";
@@ -15,10 +16,24 @@ export type MenuProps = {
 
 function Menu({ username }: MenuProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const handleOpenClose = useCallback(() => {
+    const scrollPage = document.querySelector("body") as HTMLElement;
+
+    if (!isOpen) {
+      scrollPage.style.overflow = "hidden";
+      setIsOpen(true);
+      return;
+    }
+
+    scrollPage.style.overflow = "visible";
+    setIsOpen(false);
+  }, [isOpen]);
+
   return (
     <S.Wrapper>
       <MediaMatch lessThan="medium">
-        <S.IconWrapper onClick={() => setIsOpen(true)}>
+        <S.IconWrapper onClick={handleOpenClose}>
           <MenuIcon role="img" aria-label="Open Menu" />
         </S.IconWrapper>
       </MediaMatch>
@@ -44,13 +59,17 @@ function Menu({ username }: MenuProps) {
         </S.IconWrapper>
 
         <MediaMatch greaterThan="medium">
-          {!username && <Button>Sign in</Button>}
+          {!username && (
+            <Link href="/sign-in" passHref>
+              <Button as="a">Sign in</Button>
+            </Link>
+          )}
         </MediaMatch>
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
         <CloseIcon
-          onClick={() => setIsOpen(false)}
+          onClick={handleOpenClose}
           role="img"
           aria-label="Close Menu"
         />
@@ -66,13 +85,15 @@ function Menu({ username }: MenuProps) {
         </S.MenuNav>
         {!username && (
           <S.RegisterBox>
-            <Button fullWidth size="large">
-              Log in now
-            </Button>
+            <Link href="/sign-in" passHref>
+              <Button as="a" fullWidth size="large">
+                Sign in
+              </Button>
+            </Link>
             <span>or</span>
-            <S.CreateAccount href="#" title="Sign In">
-              Sign Up
-            </S.CreateAccount>
+            <Link href="/sign-up" passHref>
+              <S.CreateAccount>Sign Up</S.CreateAccount>
+            </Link>
           </S.RegisterBox>
         )}
       </S.MenuFull>

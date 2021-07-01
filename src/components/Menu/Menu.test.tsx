@@ -41,7 +41,7 @@ describe("<Menu />", () => {
   it("should show register box when logged out", () => {
     renderWithTheme(<Menu />);
 
-    expect(screen.getByText(/log in now/i)).toBeInTheDocument();
+    expect(screen.getAllByText(/sign in/i)).toHaveLength(2);
     expect(screen.getByText(/sign up/i)).toBeInTheDocument();
     expect(screen.queryByText(/my account/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/wishlist/i)).not.toBeInTheDocument();
@@ -52,7 +52,26 @@ describe("<Menu />", () => {
 
     expect(screen.getByText(/my account/i)).toBeInTheDocument();
     expect(screen.getByText(/wishlist/i)).toBeInTheDocument();
-    expect(screen.queryByText(/log in now/i)).not.toBeInTheDocument();
+    expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/sign up/i)).not.toBeInTheDocument();
+  });
+
+  it("should must disable the page scroll when the menu is open", () => {
+    renderWithTheme(<Menu />);
+
+    fireEvent.click(screen.getByLabelText(/open menu/i));
+    expect(document.body).toHaveStyle({
+      overflow: "hidden",
+    });
+  });
+
+  it("should must enable the page scroll when the menu is closed", () => {
+    renderWithTheme(<Menu />);
+
+    fireEvent.click(screen.getByLabelText(/open menu/i));
+    fireEvent.click(screen.getByLabelText(/close menu/i));
+    expect(document.body).toHaveStyle({
+      overflow: "visible",
+    });
   });
 });
