@@ -55,4 +55,23 @@ describe("<Menu />", () => {
     expect(screen.queryByText(/sign in/i)).not.toBeInTheDocument();
     expect(screen.queryByText(/sign up/i)).not.toBeInTheDocument();
   });
+
+  it("should must disable the page scroll when the menu is open", () => {
+    renderWithTheme(<Menu />);
+
+    fireEvent.click(screen.getByLabelText(/open menu/i));
+    expect(document.body).toHaveStyle({
+      overflow: "hidden",
+    });
+  });
+
+  it("should must enable the page scroll when the menu is closed", () => {
+    renderWithTheme(<Menu />);
+
+    fireEvent.click(screen.getByLabelText(/open menu/i));
+    fireEvent.click(screen.getByLabelText(/close menu/i));
+    expect(document.body).toHaveStyle({
+      overflow: "visible",
+    });
+  });
 });
