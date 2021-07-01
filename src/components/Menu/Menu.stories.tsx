@@ -3,39 +3,35 @@ import { Story, Meta } from "@storybook/react/types-6-0";
 import Menu, { MenuProps } from ".";
 
 export default {
-  title: "Menu",
+  title: "Components/Menu",
+  argTypes: {
+    username: {
+      description: "If the user exists, hide the sign in button",
+      control: { type: "text" },
+
+      table: {
+        category: "texts",
+        summary: "string",
+      },
+    },
+  },
+  parameters: {
+    viewport: {
+      defaultViewport: "mobile1",
+    },
+    backgrounds: {
+      default: "won-dark",
+    },
+  },
   component: Menu,
-} as Meta;
+} as Meta<MenuProps>;
 
 export const Mobile: Story<MenuProps> = (args) => <Menu {...args} />;
 
-Mobile.parameters = {
-  viewport: {
-    defaultViewport: "mobile1",
-  },
-  layout: "fullscreen",
-  backgrounds: {
-    default: "dark",
-  },
-};
-
-export const Desktop: Story<MenuProps> = (args) => (
-  <div
-    style={{
-      maxWidth: "130rem",
-      margin: "0 auto",
-    }}
-  >
-    <Menu {...args} />
-  </div>
-);
+export const Desktop: Story<MenuProps> = (args) => <Menu {...args} />;
 
 Desktop.parameters = {
   viewport: {
     defaultViewport: "desktop",
-  },
-  layout: "fullscreen",
-  backgrounds: {
-    default: "dark",
   },
 };
