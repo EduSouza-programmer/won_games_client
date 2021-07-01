@@ -26,6 +26,14 @@ describe("<Ribbon />", () => {
     });
   });
 
+  it("should render with red color by props", () => {
+    renderWithTheme(<Ribbon color="red">Best Seller</Ribbon>);
+
+    expect(screen.getByText(/best seller/i)).toHaveStyle({
+      backgroundColor: "#FF5F5F",
+    });
+  });
+
   it("should render with the normal size as default", () => {
     renderWithTheme(<Ribbon>Best Seller</Ribbon>);
 

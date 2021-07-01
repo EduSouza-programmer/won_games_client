@@ -1,7 +1,7 @@
 import * as S from "./Ribbon.styles";
 
-export type RibbonColors = "primary" | "secondary";
 export type RibbonSizes = "normal" | "small";
+export type RibbonColors = "primary" | "secondary" | "red";
 
 export type RibbonProps = {
   children: React.ReactNode;
