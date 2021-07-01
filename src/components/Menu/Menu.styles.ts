@@ -7,6 +7,17 @@ export const Wrapper = styled.menu`
     align-items: center;
     padding: ${theme.spacings.small} 0;
     position: relative;
+
+    ${media.lessThan("medium")`
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: ${theme.zIndex.menu};
+      background: ${theme.palette.mainBg.main};
+      padding-left: ${theme.spacings.xsmall};
+      padding-right: ${theme.spacings.xsmall};
+    `}
   `}
 `;
 
@@ -93,6 +104,7 @@ export const RegisterBox = styled.div`
 
     > span {
       display: block;
+      color: ${theme.palette.white.main};
       margin: ${theme.spacings.xxsmall} 0;
       font-size: ${theme.typography.fontSizes.xsmall};
     }
@@ -117,16 +129,29 @@ export const MenuFull = styled.nav<MenuFullProps>`
     flex-direction: column;
     justify-content: space-between;
     background-color: ${theme.palette.white.main};
-    position: absolute;
-    top: 0;
+    background: url(/img/auth-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+    z-index: ${theme.zIndex.menu};
+    position: fixed;
+    inset: 0;
+    /*  top: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    right: 0; */
     height: 100vh;
-    overflow-y: hidden;
+    overflow: hidden;
     transition: opacity 0.3s ease-in-out;
     pointer-events: ${isOpen ? "all" : "none"};
     opacity: ${isOpen ? 1 : 0};
+
+    &::after {
+      content: "";
+      background-color: ${theme.palette.mainBg.main};
+      opacity: 0.8;
+      position: absolute;
+      inset: 0;
+    }
 
     > svg {
       position: absolute;
@@ -136,6 +161,8 @@ export const MenuFull = styled.nav<MenuFullProps>`
       cursor: pointer;
       width: 2.4rem;
       height: 2.4rem;
+      color: ${theme.palette.white.main};
+      z-index: calc(${theme.zIndex.menu} + 1);
     }
 
     ${MenuNav} {
@@ -144,10 +171,10 @@ export const MenuFull = styled.nav<MenuFullProps>`
       justify-content: center;
       align-items: center;
       flex: 1;
+      z-index: ${theme.zIndex.menu};
     }
 
     ${MenuLink} {
-      color: ${theme.palette.black.main};
       font-weight: ${theme.typography.fontWeightBold};
       font-size: ${theme.typography.fontSizes.xlarge};
       margin-bottom: ${theme.spacings.small};
@@ -158,6 +185,7 @@ export const MenuFull = styled.nav<MenuFullProps>`
     ${RegisterBox} {
       transform: ${isOpen ? "translateY(0)" : "TranslateY(10rem)"};
       transition: transform 0.3s ease-in-out;
+      z-index: ${theme.zIndex.menu};
     }
   `}
 `;
