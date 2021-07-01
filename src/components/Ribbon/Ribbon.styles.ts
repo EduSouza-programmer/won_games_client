@@ -48,6 +48,8 @@ export const Wrapper = styled.div<Omit<RibbonProps, "children">>`
     justify-content: center;
     font-weight: ${theme.typography.fontWeightBold};
     color: ${theme.palette.white.main};
+    z-index: ${theme.zIndex.base};
+    box-shadow: -0.4rem 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.7);
 
     &::before {
       content: "";
