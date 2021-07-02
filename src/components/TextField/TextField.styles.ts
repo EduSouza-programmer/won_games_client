@@ -30,6 +30,7 @@ export const Input = styled.input`
     border: 0;
     outline: none;
     width: 100%;
+    height: 4.8rem;
 
     &:-webkit-autofill,
     &:-webkit-autofill:hover,
