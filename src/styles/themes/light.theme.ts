@@ -93,7 +93,7 @@ export default responsiveFontSizes(
         main: "#2E2F42",
       },
       red: {
-        main: "#FF6347",
+        main: "#FF5F5F",
       },
     },
     spacings: {
