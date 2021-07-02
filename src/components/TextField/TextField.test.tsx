@@ -135,6 +135,6 @@ describe("<TextField />", () => {
     const { container } = renderWithTheme(<TextField error="my error" />);
 
     expect(screen.getByText(/my erro/i)).toBeInTheDocument();
-    expect(container.firstChild?.lastChild).toHaveStyle({ color: "#FF6347" });
+    expect(container.firstChild?.lastChild).toHaveStyle({ color: "#FF5F5F" });
   });
 });
