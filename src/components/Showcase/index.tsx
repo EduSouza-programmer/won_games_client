@@ -1,13 +1,33 @@
+import Heading from "@/components/Heading";
+import Highlight, { HighlightProps } from "@/components/Highlight";
+import GameCardSlider from "@/components/GameCardSlider";
+import { GameCardProps } from "@/components/GameCard";
 import * as S from "./Showcase.styles";
 
 export type ShowcaseProps = {
-  example: string;
+  title?: string;
+  highlight?: HighlightProps;
+  gamesSlider?: GameCardProps[];
+  arrowColorSlider?: "white" | "black";
 };
 
-function Showcase() {
+function Showcase({
+  title,
+  highlight,
+  gamesSlider,
+  arrowColorSlider = "white",
+}: ShowcaseProps) {
   return (
     <S.Wrapper>
-      <h1>Showcase</h1>
+      {!!title && (
+        <Heading lineLeft lineColor="secondary">
+          {title}
+        </Heading>
+      )}
+      {!!highlight && <Highlight {...highlight} />}
+      {!!gamesSlider && (
+        <GameCardSlider arrowColor={arrowColorSlider} items={gamesSlider} />
+      )}
     </S.Wrapper>
   );
 }
