@@ -26,7 +26,7 @@ describe("<Showcase />", () => {
     const { container } = renderWithTheme(<Showcase title={props.title} />);
 
     expect(
-      screen.getByRole("heading", { name: /my title/i })
+      screen.getByRole("heading", { name: props.title })
     ).toBeInTheDocument();
 
     const totalChildren = container.firstElementChild?.childElementCount;
@@ -42,7 +42,7 @@ describe("<Showcase />", () => {
     screen.getByRole("heading", { name: gameCardSliderMock[0].title });
 
     expect(
-      screen.queryByRole("heading", { name: /my title/i })
+      screen.queryByRole("heading", { name: props.title })
     ).not.toBeInTheDocument();
 
     const totalChildren = container.firstElementChild?.childElementCount;
