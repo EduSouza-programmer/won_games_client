@@ -12,7 +12,7 @@ import Showcase, { ShowcaseProps } from ".";
 const props: ShowcaseProps = {
   title: "my title",
   highlight: highlightMock,
-  gamesSlider: gameCardSliderMock.slice(0, 1),
+  gamesSlider: gameCardSliderMock.slice(0, 5),
 };
 
 describe("<Showcase />", () => {
@@ -113,5 +113,27 @@ describe("<Showcase />", () => {
     const totalChildren = container.firstElementChild?.childElementCount;
 
     expect(totalChildren).toBe(3);
+  });
+
+  it("should render arrow color slider white by default", () => {
+    renderWithTheme(<Showcase {...props} />);
+
+    expect(screen.getByLabelText(/previous games/i)).toHaveStyle({
+      color: "#FAFAFA",
+    });
+    expect(screen.getByLabelText(/next games/i)).toHaveStyle({
+      color: "#FAFAFA",
+    });
+  });
+
+  it("should render arrow color slider black when passed", () => {
+    renderWithTheme(<Showcase {...props} arrowColorSlider="black" />);
+
+    expect(screen.getByLabelText(/previous games/i)).toHaveStyle({
+      color: "#030517",
+    });
+    expect(screen.getByLabelText(/next games/i)).toHaveStyle({
+      color: "#030517",
+    });
   });
 });
