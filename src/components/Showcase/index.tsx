@@ -20,7 +20,7 @@ function Showcase({
   return (
     <S.Wrapper>
       {!!title && (
-        <Heading lineLeft lineColor="secondary">
+        <Heading className="heading" lineLeft lineColor="secondary">
           {title}
         </Heading>
       )}
