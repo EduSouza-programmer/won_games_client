@@ -32,11 +32,13 @@ describe("<Highlight />", () => {
   });
 
   it("should render background image", () => {
-    const { container } = renderWithTheme(<Highlight {...propsRequired} />);
+    renderWithTheme(<Highlight {...propsRequired} />);
 
-    expect(container.firstChild).toHaveStyle({
-      backgroundImage: `url(${propsRequired.backgroundImage})`,
-    });
+    expect(
+      screen.getByRole("img", {
+        name: /a background image with title heading 1/i,
+      })
+    ).toHaveAttribute("src", "/img/red-dead-img.jpg");
   });
 
   it("should render float image by props passed", () => {
@@ -49,17 +51,18 @@ describe("<Highlight />", () => {
     ).toHaveAttribute("src", "/img/red-dead-float.png");
   });
 
-  it("should render align right S.Content correcty by default", () => {
-    const { container } = renderWithTheme(<Highlight {...propsRequired} />);
+  it("should render the image right-aligned by default", () => {
+    const { container } = renderWithTheme(
+      <Highlight {...propsRequired} floatImage="/img/red-dead-float.png" />
+    );
 
     expect(container.firstChild).toHaveStyleRule(
       "grid-template-areas",
-      /floatimage content/
+      /floatimage content/,
+      {
+        modifier: `${S.Grid}`,
+      }
     );
-
-    expect(container.firstChild).toHaveStyleRule("text-align", "right", {
-      modifier: `${S.Content}`,
-    });
   });
 
   it("should render align left S.Content correcty when props passed", () => {
@@ -69,11 +72,14 @@ describe("<Highlight />", () => {
 
     expect(container.firstChild).toHaveStyleRule(
       "grid-template-areas",
-      /content floatimage/
+      /content floatimage/,
+      {
+        modifier: `${S.Grid}`,
+      }
     );
 
     expect(container.firstChild).toHaveStyleRule("text-align", "left", {
-      modifier: `${S.Content}`,
+      modifier: `${S.Grid} ${S.Content}`,
     });
   });
 });
