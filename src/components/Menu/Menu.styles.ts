@@ -1,5 +1,7 @@
+import Image from "next/image";
 import styled, { css } from "styled-components";
-import media from "styled-media-query";
+
+import * as buttonStyles from "@/components/Button/Button.styles";
 
 export const Wrapper = styled.menu`
   ${({ theme }) => css`
@@ -8,7 +10,7 @@ export const Wrapper = styled.menu`
     padding: ${theme.spacings.small} 0;
     position: relative;
 
-    ${media.lessThan("medium")`
+    ${theme.media.lessThan("medium")`
       position: fixed;
       width: 100%;
       top: 0;
@@ -31,11 +33,13 @@ export const IconWrapper = styled.div`
 `;
 
 export const LogoWrapper = styled.div`
-  ${media.lessThan("medium")`
+  ${({ theme }) => css`
+    ${theme.media.lessThan("medium")`
     position: absolute;
     left: 50%;
-   transform: translateX(-50%);
+    transform: translateX(-50%);
 
+  `}
   `}
 `;
 
@@ -54,9 +58,8 @@ export const MenuGroup = styled.div`
 
 export const MenuNav = styled.div`
   ${({ theme }) => css`
-    ${media.greaterThan("medium")`
-
-    margin-left: ${theme.spacings.small};
+    ${theme.media.greaterThan("medium")`
+      margin-left: ${theme.spacings.small};
 
     `}
   `}
@@ -123,15 +126,14 @@ type MenuFullProps = {
   isOpen: boolean;
 };
 
+export const BackgroundImage = Image;
+
 export const MenuFull = styled.nav<MenuFullProps>`
   ${({ theme, isOpen }) => css`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     background-color: ${theme.palette.white.main};
-    background: url(/img/auth-bg.jpg);
-    background-size: cover;
-    background-position: center center;
     z-index: ${theme.zIndex.menu};
     position: fixed;
     inset: 0;
@@ -163,6 +165,10 @@ export const MenuFull = styled.nav<MenuFullProps>`
       height: 2.4rem;
       color: ${theme.palette.white.main};
       z-index: calc(${theme.zIndex.menu} + 1);
+    }
+
+    ${buttonStyles.Wrapper} {
+      box-shadow: ${theme.shadows[10]};
     }
 
     ${MenuNav} {
