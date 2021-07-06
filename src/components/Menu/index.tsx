@@ -17,18 +17,25 @@ export type MenuProps = {
 function Menu({ username }: MenuProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpenClose = useCallback(() => {
+  const scrollUnlock = useCallback(() => {
     const scrollPage = document.querySelector("body") as HTMLElement;
+    scrollPage.style.overflow = "visible";
+  }, []);
 
+  const scrollLock = useCallback(() => {
+    const scrollPage = document.querySelector("body") as HTMLElement;
+    scrollPage.style.overflow = "hidden";
+  }, []);
+
+  const handleOpenClose = useCallback(() => {
     if (!isOpen) {
-      scrollPage.style.overflow = "hidden";
+      scrollLock();
       setIsOpen(true);
       return;
     }
-
-    scrollPage.style.overflow = "visible";
+    scrollUnlock();
     setIsOpen(false);
-  }, [isOpen]);
+  }, [isOpen, scrollLock, scrollUnlock]);
 
   return (
     <S.Wrapper>
@@ -68,6 +75,11 @@ function Menu({ username }: MenuProps) {
       </S.MenuGroup>
 
       <S.MenuFull aria-hidden={!isOpen} isOpen={isOpen}>
+        <S.BackgroundImage
+          layout="fill"
+          src="/img/auth-bg.jpg"
+          objectFit="cover"
+        />
         <CloseIcon
           onClick={handleOpenClose}
           role="img"
@@ -86,13 +98,20 @@ function Menu({ username }: MenuProps) {
         {!username && (
           <S.RegisterBox>
             <Link href="/sign-in" passHref>
-              <Button as="a" fullWidth size="large">
+              <Button
+                onClickCapture={scrollUnlock}
+                as="a"
+                fullWidth
+                size="large"
+              >
                 Sign in
               </Button>
             </Link>
             <span>or</span>
             <Link href="/sign-up" passHref>
-              <S.CreateAccount>Sign Up</S.CreateAccount>
+              <S.CreateAccount onClickCapture={scrollUnlock}>
+                Sign Up
+              </S.CreateAccount>
             </Link>
           </S.RegisterBox>
         )}
