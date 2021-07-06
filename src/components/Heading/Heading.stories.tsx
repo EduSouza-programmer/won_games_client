@@ -1,7 +1,21 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
+import { StoryFnReactReturnType } from "@storybook/react/dist/ts3.9/client/preview/types";
 import styled from "styled-components";
 
 import Heading, { HeadingProps } from ".";
+
+const WrapperCenter = styled.div`
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
+
+const defaultDecorator = (Story: Story): StoryFnReactReturnType => (
+  <WrapperCenter>
+    <Story />
+  </WrapperCenter>
+);
 
 export default {
   title: "Components/Heading",
@@ -15,6 +29,8 @@ export default {
         category: "texts",
         type: {
           summary: "React.ReactNode",
+          detail:
+            "type ReactNode = ReactChild | ReactFragment | ReactPortal | boolean | null | undefined",
         },
       },
     },
@@ -36,6 +52,7 @@ export default {
         category: "choices",
         type: {
           summary: "boolean",
+          detail: "true | false",
         },
       },
     },
@@ -46,6 +63,7 @@ export default {
         category: "choices",
         type: {
           summary: "boolean",
+          detail: "true | false",
         },
       },
     },
@@ -56,7 +74,8 @@ export default {
       table: {
         category: "choices",
         type: {
-          summary: "small | medium | huge",
+          summary: "Size",
+          detail: "small | medium | huge",
         },
       },
     },
@@ -67,7 +86,8 @@ export default {
       table: {
         category: "choices",
         type: {
-          summary: "primary | secondary",
+          summary: "LineColor",
+          detail: "primary | secondary",
         },
       },
     },
@@ -77,9 +97,12 @@ export default {
       table: {
         category: "logics",
         type: {
-          summary:
-            "{minFontsizes:number | maxFontSizes:number | isNoWrapperText:boolean}",
-          detail: "To work the size property must not be set.",
+          summary: "ResponsiveFontSizes",
+          detail: `{
+            minFontSizes: number;
+            maxFontSizes: number;
+            isNoWrapperText?: boolean;
+          };`,
         },
       },
     },
@@ -103,33 +126,21 @@ export default {
   },
   parameters: {
     viewport: {
-      defaultViewport: "figmaMobile",
+      defaultViewport: "mobile1",
     },
     layout: "fullscreen",
   },
+  decorators: [defaultDecorator],
 } as Meta<HeadingProps>;
 
-const WrapperCenter = styled.div`
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-`;
-
-export const Default: Story<HeadingProps> = (args) => (
-  <WrapperCenter>
-    <Heading {...args} />
-  </WrapperCenter>
-);
+export const Default: Story<HeadingProps> = (args) => <Heading {...args} />;
 
 Default.args = {
   size: "medium",
 };
 
 export const ResponsiveSize: Story<HeadingProps> = (args) => (
-  <WrapperCenter>
-    <Heading {...args} />
-  </WrapperCenter>
+  <Heading {...args} />
 );
 
 ResponsiveSize.argTypes = {
@@ -151,7 +162,6 @@ ResponsiveSize.parameters = {
   viewport: {
     defaultViewport: "desktop",
   },
-  layout: "fullscreen",
 };
 
 ResponsiveSize.args = {
