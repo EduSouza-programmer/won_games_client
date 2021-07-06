@@ -6,6 +6,8 @@ import {
   PaletteColor,
   PaletteColorOptions,
 } from "@material-ui/core/styles/createPalette";
+import { MediaGenerator } from "styled-media-query";
+import * as polished from "polished";
 
 import "@material-ui/core/styles/zIndex";
 import "@material-ui/core/styles/createTypography";
@@ -24,10 +26,26 @@ declare module "@material-ui/core/styles/createMuiTheme" {
       xlarge: string;
       xxlarge: string;
     };
+
+    media: MediaGenerator<
+      {
+        xhuge: string;
+        huge: string;
+        large: string;
+        medium: string;
+        small: string;
+        xsmall: string;
+      },
+      this
+    >;
+
+    polished: typeof polished;
+
     gridLayout: {
       container: string;
       gutter: string;
     };
+
     border: {
       radius: string;
     };
@@ -45,10 +63,26 @@ declare module "@material-ui/core/styles/createMuiTheme" {
       xlarge: string;
       xxlarge: string;
     };
+
+    media?: MediaGenerator<
+      {
+        xhuge: string;
+        huge: string;
+        large: string;
+        medium: string;
+        small: string;
+        xsmall: string;
+      },
+      this
+    >;
+
+    polished?: typeof polished;
+
     gridLayout?: {
       container: string;
       gutter: string;
     };
+
     border?: {
       radius: string;
     };
@@ -66,6 +100,12 @@ declare module "@material-ui/core/styles/createPalette" {
     darkGray: PaletteColor;
     red: PaletteColor;
   }
+
+  /*   polished?: {
+    darken: (amount: string | number, color: string) => string;
+    lighten: (amount: string | number, color: string) => string;
+    polished2: Module;
+  }; */
   export interface PaletteOptions {
     mainBg?: PaletteColorOptions;
     lightBg?: PaletteColorOptions;
