@@ -34,7 +34,7 @@ export default {
         category: "choices",
         type: {
           summary: "boolean",
-          detail: "Hide the logo text",
+          detail: "true | false",
         },
       },
     },
