@@ -1,4 +1,6 @@
 import { createMuiTheme, responsiveFontSizes } from "@material-ui/core/styles";
+import { generateMedia } from "styled-media-query";
+import * as polished from "polished";
 
 const fontPoppins300 = {
   fontFamily: "Poppins",
@@ -116,11 +118,20 @@ export default responsiveFontSizes(
       values: {
         xs: 0,
         sm: 450,
-        md: 768,
+        md: 769,
         lg: 1170,
         xl: 1920,
       },
     },
+    media: generateMedia({
+      xhuge: "1920px",
+      huge: "1440px",
+      large: "1170px",
+      medium: "769px",
+      small: "450px",
+      xsmall: "350px",
+    }),
+    polished,
     border: {
       radius: "0.4rem",
     },

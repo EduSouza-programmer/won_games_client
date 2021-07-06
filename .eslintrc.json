@@ -37,6 +37,7 @@
     "import"
   ],
   "rules": {
+    "no-shadow": ["error", { "allow": ["Story"] }],
     "prettier/prettier": "error",
 
     "import/prefer-default-export": "off",
