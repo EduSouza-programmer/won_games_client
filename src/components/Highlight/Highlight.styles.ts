@@ -1,102 +1,175 @@
-import styled, { css } from "styled-components";
-import media from "styled-media-query";
+import Image from "next/image";
+import styled, { css, DefaultTheme } from "styled-components";
 
+import Heading from "@/components/Heading";
+
+import * as buttonStyles from "@/components/Button/Button.styles";
 import { HighlightProps } from ".";
 
-type WrapperProps = Pick<HighlightProps, "backgroundImage" | "alignment">;
+type WrapperProps = Pick<HighlightProps, "alignment">;
 
-export const FloatImage = styled.img`
+export const BackgroundImage = Image;
+
+export const FloatImage = styled.div`
   ${({ theme }) => css`
     z-index: ${theme.zIndex.base};
-    max-height: 27rem;
-    max-width: 100%;
-    grid-area: floatimage;
-    align-self: end;
-    justify-self: end;
 
-    ${media.greaterThan("medium")`
-      max-height: 32rem;
+    display: flex;
+    align-self: flex-end;
+    grid-area: floatimage;
+
+    ${theme.media.lessThan("small")`
+      & > div {
+        position: absolute !important;
+      }
+
+      img {
+        width: 22rem !important;
+        height: 19rem !important;
+      }
+
+    `}
+
+    ${theme.media.lessThan("xsmall")`
+      img {
+        width: 19rem !important;
+        height: 17rem !important;
+      }
+    `}
+
+    ${theme.media.greaterThan("medium")`
+      img {
+        height: 32rem !important
+      }
     `}
   `}
 `;
+
+export const Subtitle = Heading;
 
 export const Content = styled.div`
   ${({ theme }) => css`
     z-index: ${theme.zIndex.base};
-    padding: ${theme.spacings.xsmall};
+
+    display: flex;
+    flex-direction: column;
     grid-area: content;
 
-    ${media.greaterThan("medium")`
+    ${theme.media.greaterThan("medium")`
       align-self: end;
-      padding: ${theme.spacings.large};
     `}
+
+    .subtitle {
+      font-weight: ${theme.typography.fontWeightMedium};
+      margin-bottom: ${theme.spacings.xsmall};
+
+      ${theme.media.greaterThan("small")`
+          margin-bottom: ${theme.spacings.medium};
+      `}
+    }
+
+    ${buttonStyles.Wrapper} {
+      box-shadow: ${theme.shadows[10]};
+    }
+  `}
+`;
+
+export const Grid = styled.div`
+  ${({ theme }) => css`
+    display: grid;
+    height: 27rem;
+
+    ${theme.media.greaterThan("medium")`
+      height: 32rem;
+  `}
   `}
 `;
 
 const wrapperModifiers = {
-  right: () => css`
-    grid-template-areas: "floatimage content";
-    grid-template-columns: 1fr 2fr;
-    ${Content} {
-      text-align: right;
+  right: (theme: DefaultTheme) => css`
+    ${Grid} {
+      grid-template-areas: "floatimage content";
+      grid-template-columns: 1fr 1.5fr;
+
+      ${FloatImage} {
+        justify-self: flex-start;
+
+        ${theme.media.lessThan("small")`
+          & > div {
+            left: 0;
+            bottom: 0;
+          }
+        `}
+      }
+
+      ${Content} {
+        justify-self: end;
+
+        padding-top: ${theme.spacings.xsmall};
+        padding-bottom: ${theme.spacings.xsmall};
+        padding-right: ${theme.spacings.xsmall};
+
+        ${theme.media.greaterThan("medium")`
+          padding-top: ${theme.spacings.xlarge};
+          padding-bottom: ${theme.spacings.xlarge};
+          padding-right: ${theme.spacings.xlarge};
+
+        `}
+
+        ${buttonStyles.Wrapper} {
+          align-self: flex-end;
+        }
+      }
     }
   `,
-  left: () => css`
-    grid-template-areas: "content floatimage";
-    grid-template-columns: 2fr 1fr;
-    ${Content} {
-      text-align: left;
+  left: (theme: DefaultTheme) => css`
+    ${Grid} {
+      grid-template-areas: "content floatimage";
+      grid-template-columns: 1.5fr 1fr;
+
+      ${FloatImage} {
+        justify-self: flex-end;
+        ${theme.media.lessThan("small")`
+          & > div {
+            right: 0;
+            bottom: 0;
+          }
+        `}
+      }
+
+      ${Content} {
+        text-align: left;
+
+        padding-top: ${theme.spacings.xsmall};
+        padding-bottom: ${theme.spacings.xsmall};
+        padding-left: ${theme.spacings.xsmall};
+
+        ${theme.media.greaterThan("medium")`
+          padding-top: ${theme.spacings.xlarge};
+          padding-bottom: ${theme.spacings.xlarge};
+          padding-left: ${theme.spacings.xlarge};
+
+        `}
+
+        ${buttonStyles.Wrapper} {
+          align-self: flex-start;
+        }
+      }
     }
   `,
 };
 
-export const Wrapper = styled.section<WrapperProps>`
-  ${({ backgroundImage, alignment }) => css`
+export const Wrapper = styled.div<WrapperProps>`
+  ${({ theme, alignment }) => css`
     position: relative;
-    height: 27rem;
-    display: grid;
-
-    background-image: url(${backgroundImage});
-    background-position: center center;
-    background-size: cover;
 
     &::after {
       content: "";
       position: absolute;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background-color: rgba(0, 0, 0, 0.6);
     }
 
-    ${media.greaterThan("medium")`
-      height: 32rem;
-    `}
-
-    ${wrapperModifiers[alignment!]()}
-  `}
-`;
-
-export const Title = styled.h2`
-  ${({ theme }) => css`
-    font-size: ${theme.typography.fontSizes.large};
-    font-weight: ${theme.typography.fontWeightBold};
-    color: ${theme.palette.white.main};
-
-    ${media.greaterThan("medium")`
-    font-size: ${theme.typography.fontSizes.xxlarge};
-    `}
-  `}
-`;
-
-export const Subtitle = styled.h3`
-  ${({ theme }) => css`
-    font-size: ${theme.typography.fontSizes.small};
-    font-weight: ${theme.typography.fontWeightMedium};
-    color: ${theme.palette.white.main};
-    margin-bottom: ${theme.spacings.medium};
-
-    ${media.greaterThan("medium")`
-    font-size: ${theme.typography.fontSizes.large};
-    `}
+    ${wrapperModifiers[alignment!](theme)}
   `}
 `;
