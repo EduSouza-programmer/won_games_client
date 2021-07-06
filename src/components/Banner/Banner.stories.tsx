@@ -1,4 +1,7 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
+import { StoryFnReactReturnType } from "@storybook/react/dist/ts3.9/client/preview/types";
+import styled from "styled-components";
+
 import Banner, { BannerProps } from ".";
 
 export default {
@@ -72,7 +75,9 @@ export default {
       table: {
         category: "texts",
         type: {
-          summary: "string",
+          summary: "React.ReactNode",
+          detail:
+            "type ReactNode = boolean | ReactChild | ReactFragment | ReactPortal | null | undefined",
         },
       },
     },
@@ -83,19 +88,21 @@ export default {
 
       table: {
         category: "choices",
-        tape: {
-          summary: "normal | small",
+        type: {
+          summary: "RibbonSizes",
+          detail: "normal | small",
         },
       },
     },
     ribbonColor: {
       description: "Ribbon color",
-      options: ["primary", "secondary"],
+      options: ["primary", "secondary", "red"],
       control: { type: "select" },
       table: {
         category: "choices",
         type: {
-          summary: "primary | secondary",
+          summary: "RibbonColors",
+          detail: "primary | secondary | red",
         },
       },
     },
@@ -113,7 +120,7 @@ export default {
     },
     layout: "centered",
     backgrounds: {
-      default: "dark",
+      default: "won-dark",
     },
   },
 } as Meta<BannerProps>;
@@ -130,13 +137,23 @@ MobileWithRibbon.args = {
   ribbonColor: "primary",
 };
 
+const WrapperCenter = styled.div`
+  padding: 3rem;
+`;
+
+const defaultDecorator = (Story: Story): StoryFnReactReturnType => (
+  <WrapperCenter>
+    <Story />
+  </WrapperCenter>
+);
+
 export const Desktop: Story<BannerProps> = (args) => <Banner {...args} />;
 
+Desktop.decorators = [defaultDecorator];
 Desktop.parameters = {
   viewport: {
     defaultViewport: "desktop",
   },
-  layout: "centered",
 };
 
 export const DesktopWithRibbon: Story<BannerProps> = (args) => (
@@ -149,11 +166,11 @@ export const DesktopWithRibbon: Story<BannerProps> = (args) => (
   </div>
 );
 
+DesktopWithRibbon.decorators = [defaultDecorator];
 DesktopWithRibbon.parameters = {
   viewport: {
     defaultViewport: "desktop",
   },
-  layout: "centered",
 };
 
 DesktopWithRibbon.args = {
