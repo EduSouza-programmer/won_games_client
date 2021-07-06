@@ -1,3 +1,5 @@
+import { HtmlHTMLAttributes } from "react";
+
 import * as S from "./Heading.styles";
 
 export type LineColor = "primary" | "secondary";
@@ -19,7 +21,7 @@ export type HeadingProps = {
   lineColor?: LineColor;
   responsiveSize?: ResponsiveFontSizes;
   as?: React.ElementType;
-};
+} & HtmlHTMLAttributes<HTMLHeadingElement>;
 
 function Heading({
   children,
@@ -30,6 +32,7 @@ function Heading({
   lineColor = "primary",
   responsiveSize,
   as,
+  ...props
 }: HeadingProps) {
   return (
     <S.Wrapper
@@ -40,6 +43,7 @@ function Heading({
       lineColor={lineColor}
       responsiveSize={responsiveSize}
       as={as}
+      {...props}
     >
       {children}
     </S.Wrapper>
