@@ -1,3 +1,6 @@
+import Image from "next/image";
+
+import Heading from "@/components/Heading";
 import Button from "@/components/Button";
 import * as S from "./Highlight.styles";
 
@@ -21,15 +24,44 @@ function Highlight({
   alignment = "right",
 }: HighlightProps) {
   return (
-    <S.Wrapper alignment={alignment} backgroundImage={backgroundImage}>
-      {!!floatImage && <S.FloatImage src={floatImage} alt={title} />}
-      <S.Content>
-        <S.Title>{title}</S.Title>
-        <S.Subtitle>{subtitle}</S.Subtitle>
-        <Button as="a" href={buttonLink}>
-          {buttonLabel}
-        </Button>
-      </S.Content>
+    <S.Wrapper alignment={alignment}>
+      <S.BackgroundImage
+        layout="fill"
+        src={backgroundImage}
+        placeholder="blur"
+        blurDataURL={backgroundImage}
+        alt={`A background image with title ${title}`}
+        objectFit="cover"
+      />
+
+      <S.Grid className="oi">
+        {!!floatImage && (
+          <S.FloatImage>
+            <Image width={290} height={270} src={floatImage} alt={title} />
+          </S.FloatImage>
+        )}
+        <S.Content>
+          <Heading
+            responsiveSize={{
+              minFontSizes: 16,
+              maxFontSizes: 30,
+              isNoWrapperText: true,
+            }}
+          >
+            {title}
+          </Heading>
+          <S.Subtitle
+            as="h3"
+            className="subtitle"
+            responsiveSize={{ minFontSizes: 11, maxFontSizes: 20 }}
+          >
+            {subtitle}
+          </S.Subtitle>
+          <Button as="a" href={buttonLink}>
+            {buttonLabel}
+          </Button>
+        </S.Content>
+      </S.Grid>
     </S.Wrapper>
   );
 }

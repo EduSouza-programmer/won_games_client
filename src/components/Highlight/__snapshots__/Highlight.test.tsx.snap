@@ -1,49 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Highlight /> should render the headings and button 1`] = `
-.c2 {
-  z-index: 10;
-  padding: 1.6rem;
-  grid-area: content;
-}
-
-.c0 {
-  position: relative;
-  height: 27rem;
-  display: grid;
-  background-image: url(/img/red-dead-img.jpg);
-  background-position: center center;
-  background-size: cover;
-  grid-template-areas: "floatimage content";
-  grid-template-columns: 1fr 2fr;
-}
-
-.c0::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-}
-
-.c0 .c1 {
-  text-align: right;
-}
-
-.c3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #FAFAFA;
-}
-
-.c4 {
-  font-size: 1.4rem;
-  font-weight: 400;
-  color: #FAFAFA;
-  margin-bottom: 3.2rem;
-}
-
 .c5 {
+  color: #FAFAFA;
+  font-size: calc( 16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)) );
+  white-space: nowrap;
+}
+
+.c6 {
+  color: #FAFAFA;
+  font-size: calc( 11px + (20 - 11) * ((100vw - 320px) / (1920 - 320)) );
+}
+
+.c8 {
   background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
   color: #FAFAFA;
   border: 0;
@@ -67,61 +36,152 @@ exports[`<Highlight /> should render the headings and button 1`] = `
   padding: 0.8rem 3.2rem;
 }
 
-.c5:hover {
+.c8:hover {
   background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
 }
 
-@media (min-width:768px) {
-  .c2 {
-    -webkit-align-self: end;
-    -ms-flex-item-align: end;
-    align-self: end;
-    padding: 4.0rem;
+.c4 {
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  grid-area: content;
+}
+
+.c4 .subtitle {
+  font-weight: 400;
+  margin-bottom: 1.6rem;
+}
+
+.c4 .c7 {
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+
+.c2 {
+  display: grid;
+  height: 27rem;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.c0 .c1 {
+  grid-template-areas: "floatimage content";
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.c0 .c1 .sc-dlnjwi {
+  justify-self: flex-start;
+}
+
+.c0 .c1 .c3 {
+  justify-self: end;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  padding-right: 1.6rem;
+}
+
+.c0 .c1 .c3 .c7 {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+@media (min-width:1920px) {
+  .c5 {
+    font-size: 30px;
   }
 }
 
-@media (min-width:768px) {
-  .c0 {
-    height: 32rem;
-  }
-}
-
-@media (min-width:768px) {
-  .c3 {
-    font-size: 2.8rem;
+@media (min-width:1920px) {
+  .c6 {
+    font-size: 20px;
   }
 }
 
 @media (min-width:768px) {
   .c4 {
-    font-size: 1.8rem;
+    -webkit-align-self: end;
+    -ms-flex-item-align: end;
+    align-self: end;
   }
 }
 
-<section
+@media (min-width:450px) {
+  .c4 .subtitle {
+    margin-bottom: 3.2rem;
+  }
+}
+
+@media (min-width:768px) {
+  .c2 {
+    height: 32rem;
+  }
+}
+
+@media (max-width:450px) {
+  .c0 .c1 .sc-dlnjwi > div {
+    left: 0;
+    bottom: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c0 .c1 .c3 {
+    padding-top: 4.8rem;
+    padding-bottom: 4.8rem;
+    padding-right: 4.8rem;
+  }
+}
+
+<div
   class="c0"
 >
+  <img
+    alt="A background image with title Heading 1"
+    layout="fill"
+    placeholder="blur"
+    src="/img/red-dead-img.jpg"
+  />
   <div
-    class="c1 c2"
+    class="c1 c2 oi"
   >
-    <h2
-      class="c3"
+    <div
+      class="c3 c4"
     >
-      Heading 1
-    </h2>
-    <h3
-      class="c4"
-    >
-      Heading 2
-    </h3>
-    <a
-      class="c5"
-      href="https://any"
-    >
-      <span>
-        Buy now
-      </span>
-    </a>
+      <h2
+        class="c5"
+        color="white"
+      >
+        Heading 1
+      </h2>
+      <h3
+        class="c6 subtitle"
+        color="white"
+      >
+        Heading 2
+      </h3>
+      <a
+        class="c7 c8"
+        href="https://any"
+      >
+        <span>
+          Buy now
+        </span>
+      </a>
+    </div>
   </div>
-</section>
+</div>
 `;
