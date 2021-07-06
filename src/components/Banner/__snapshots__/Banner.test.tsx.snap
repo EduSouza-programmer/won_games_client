@@ -78,6 +78,12 @@ exports[`<Banner /> should render correctly 1`] = `
   font-weight: 600;
 }
 
+@media (min-width:1920px) {
+  .c3 {
+    font-size: 30px;
+  }
+}
+
 @media (max-width:768px) {
   .c0 .sc-bdnxRM {
     right: 0;
