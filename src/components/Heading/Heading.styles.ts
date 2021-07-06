@@ -101,11 +101,15 @@ const wrapperModifiers = {
     font-size: ${theme.typography.fontSizes.huge};
   `,
 
-  responsiveSize: (obj: ResponsiveFontSizes) => css`
+  responsiveSize: (theme: DefaultTheme, obj: ResponsiveFontSizes) => css`
     font-size: calc(
       ${obj.minFontSizes}px + (${obj.maxFontSizes} - ${obj.minFontSizes}) *
         ((100vw - 320px) / (1920 - 320))
     );
+
+    ${theme.media.greaterThan("xhuge")`
+      font-size: ${obj.maxFontSizes}px;
+    `}
 
     ${obj.isNoWrapperText &&
     css`
@@ -131,6 +135,6 @@ export const Wrapper = styled.h2<HeadingProps>`
     ${!!size && wrapperModifiers[size](theme)}
     ${!!responsiveSize &&
     !size &&
-    wrapperModifiers.responsiveSize(responsiveSize)}
+    wrapperModifiers.responsiveSize(theme, responsiveSize)}
   `}
 `;
