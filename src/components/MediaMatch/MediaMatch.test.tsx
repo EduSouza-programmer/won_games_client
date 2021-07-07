@@ -1,4 +1,6 @@
-import { screen, render } from "@testing-library/react";
+import { screen } from "@testing-library/react";
+
+import { renderWithTheme } from "@/utils/tests/helpers";
 
 import MediaMatch from ".";
 
@@ -7,7 +9,7 @@ describe("<MediaMatch />", () => {
   let mobileHeading: Element;
 
   beforeEach(() => {
-    render(
+    renderWithTheme(
       <>
         <MediaMatch greaterThan="medium">
           <h1 data-testid="desktop">Desktop</h1>
@@ -29,10 +31,10 @@ describe("<MediaMatch />", () => {
 
   it("should show or hide based on the media passed", () => {
     expect(desktopHeading.parentElement).toHaveStyleRule("display", "block", {
-      media: "(min-width: 768px)",
+      media: "(min-width: 769px)",
     });
     expect(mobileHeading.parentElement).toHaveStyleRule("display", "block", {
-      media: "(max-width: 768px)",
+      media: "(max-width: 769px)",
     });
   });
 });
