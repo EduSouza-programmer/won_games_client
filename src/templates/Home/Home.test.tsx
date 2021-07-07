@@ -22,28 +22,27 @@ const props: HomeTamplateProps = {
   freeGames: [GameCardSliderMock[0]],
 };
 
+jest.mock("@/components/BannerSlider", () => {
+  return {
+    __esModule: true,
+    default: function myMock() {
+      return <div data-testid="Mock BannerSlider" />;
+    },
+  };
+});
+
+jest.mock("@/components/Showcase", () => {
+  return {
+    __esModule: true,
+    default: () => <div data-testid="Mock Showcase" />,
+  };
+});
+
 describe("<Home />", () => {
-  it("should render menu, footer and sections", () => {
+  it("should render bannerSlider and showcase", () => {
     renderWithTheme(<Home {...props} />);
 
-    expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { name: /contact/i })
-    ).toBeInTheDocument();
-
-    expect(screen.getByRole("heading", { name: /news/i })).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { name: /most popular/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { name: /upcomming/i })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("heading", { name: /free Games/i })
-    ).toBeInTheDocument();
-
-    expect(screen.getByText(/defy death 1/i)).toBeInTheDocument();
-    expect(screen.getAllByText(/population zero 1/i)).toHaveLength(5);
-    expect(screen.getAllByText(/read dead it's back/i)).toHaveLength(3);
+    expect(screen.getByTestId(/mock bannerSlider/i)).toBeInTheDocument();
+    expect(screen.getAllByTestId(/mock showcase/i)).toHaveLength(5);
   });
 });
