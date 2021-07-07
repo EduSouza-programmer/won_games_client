@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from "next/link";
 
 import Heading from "@/components/Heading";
@@ -15,8 +14,8 @@ function Auth({ title, children }: AuthProps) {
     <S.Wrapper>
       <S.BannerBlock>
         <S.BannerContent>
-          <Link href="/">
-            <a>
+          <Link href="/" passHref>
+            <a href="replace">
               <Logo id="banner" />
             </a>
           </Link>
@@ -26,7 +25,7 @@ function Auth({ title, children }: AuthProps) {
               responsiveSize={{
                 minFontSizes: 14,
                 maxFontSizes: 52,
-                isNoWapperText: true,
+                isNoWrapperText: true,
               }}
             >
               Seus jogos favoritos em <br /> um só lugar
@@ -47,8 +46,8 @@ function Auth({ title, children }: AuthProps) {
 
       <S.Content>
         <S.ContentWrapper>
-          <Link href="/">
-            <a>
+          <Link href="/" passHref>
+            <a href="replace">
               <Logo id="content" color="black" size="large" />
             </a>
           </Link>
