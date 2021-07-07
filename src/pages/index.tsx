@@ -1,6 +1,9 @@
 import BannerSliderMock from "@/components/BannerSlider/BannerSlider.mock";
 import GameCardSliderMock from "@/components/GameCardSlider/GameCardSlider.mock";
-import HighlightMock from "@/components/Highlight/Highlight.mock";
+import HighlightMock, {
+  highlightExample2,
+  highlightExample3,
+} from "@/components/Highlight/Highlight.mock";
 
 import Home, { HomeTamplateProps } from "@/templates/Home";
 
@@ -15,10 +18,10 @@ export function getStaticProps() {
       newGames: GameCardSliderMock,
       mostPopularHighlight: HighlightMock,
       mostPopularGames: GameCardSliderMock,
-      upcommingHighlight: HighlightMock,
+      upcommingHighlight: highlightExample2,
       upcommingGames: GameCardSliderMock,
       upcommingMoreGames: GameCardSliderMock,
-      freeHighlight: HighlightMock,
+      freeHighlight: highlightExample3,
       freeGames: GameCardSliderMock,
     },
   };
