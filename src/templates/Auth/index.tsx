@@ -23,18 +23,15 @@ function Auth({ title, children }: AuthProps) {
           <div>
             <Heading
               responsiveSize={{
-                minFontSizes: 14,
-                maxFontSizes: 52,
+                min: 14,
+                max: 52,
                 isNoWrapperText: true,
               }}
             >
               Seus jogos favoritos em <br /> um só lugar
             </Heading>
             <S.Subtitle>
-              <Heading
-                as="h3"
-                responsiveSize={{ minFontSizes: 10, maxFontSizes: 22 }}
-              >
+              <Heading as="h3" responsiveSize={{ min: 10, max: 22 }}>
                 <strong>WON</strong> is the best and most complete gaming
                 platform.
               </Heading>

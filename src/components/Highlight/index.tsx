@@ -43,8 +43,8 @@ function Highlight({
         <S.Content>
           <Heading
             responsiveSize={{
-              minFontSizes: 16,
-              maxFontSizes: 30,
+              min: 16,
+              max: 30,
               isNoWrapperText: true,
             }}
           >
@@ -53,7 +53,7 @@ function Highlight({
           <S.Subtitle
             as="h3"
             className="subtitle"
-            responsiveSize={{ minFontSizes: 11, maxFontSizes: 20 }}
+            responsiveSize={{ min: 11, max: 20 }}
           >
             {subtitle}
           </S.Subtitle>

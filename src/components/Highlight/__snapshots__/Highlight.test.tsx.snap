@@ -1,0 +1,187 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Highlight /> should render the headings and button 1`] = `
+.c5 {
+  color: #FAFAFA;
+  font-size: calc( 16px + (30 - 16) * ((100vw - 320px) / (1920 - 320)) );
+  white-space: nowrap;
+}
+
+.c6 {
+  color: #FAFAFA;
+  font-size: calc( 11px + (20 - 11) * ((100vw - 320px) / (1920 - 320)) );
+}
+
+.c8 {
+  background: linear-gradient(180deg,#ff5f5f 0%,#f062c0 50%);
+  color: #FAFAFA;
+  border: 0;
+  border-radius: 0.4rem;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 4rem;
+  font-size: 1.4rem;
+  padding: 0.8rem 3.2rem;
+}
+
+.c8:hover {
+  background: linear-gradient(180deg,#e35565 0%,#d958a6 50%);
+}
+
+.c4 {
+  z-index: 10;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  grid-area: content;
+}
+
+.c4 .subtitle {
+  font-weight: 400;
+  margin-bottom: 1.6rem;
+}
+
+.c4 .c7 {
+  box-shadow: 0px 6px 6px -3px rgba(0,0,0,0.2),0px 10px 14px 1px rgba(0,0,0,0.14),0px 4px 18px 3px rgba(0,0,0,0.12);
+}
+
+.c2 {
+  display: grid;
+  height: 27rem;
+}
+
+.c0 {
+  position: relative;
+}
+
+.c0::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.c0 .c1 {
+  grid-template-areas: "floatimage content";
+  grid-template-columns: 1fr 1.5fr;
+}
+
+.c0 .c1 .sc-dlnjwi {
+  justify-self: flex-start;
+}
+
+.c0 .c1 .c3 {
+  justify-self: end;
+  padding-top: 1.6rem;
+  padding-bottom: 1.6rem;
+  padding-right: 1.6rem;
+}
+
+.c0 .c1 .c3 .c7 {
+  -webkit-align-self: flex-end;
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+}
+
+@media (min-width:1920px) {
+  .c5 {
+    font-size: 30px;
+  }
+}
+
+@media (min-width:1920px) {
+  .c6 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width:769px) {
+  .c4 {
+    -webkit-align-self: end;
+    -ms-flex-item-align: end;
+    align-self: end;
+  }
+}
+
+@media (min-width:450px) {
+  .c4 .subtitle {
+    margin-bottom: 3.2rem;
+  }
+}
+
+@media (min-width:769px) {
+  .c2 {
+    height: 32rem;
+  }
+}
+
+@media (max-width:450px) {
+  .c0 .c1 .sc-dlnjwi > div {
+    left: 0;
+    bottom: 0;
+  }
+}
+
+@media (min-width:769px) {
+  .c0 .c1 .c3 {
+    padding-top: 4.8rem;
+    padding-bottom: 4.8rem;
+    padding-right: 4.8rem;
+  }
+}
+
+<div
+  class="c0"
+>
+  <img
+    alt="A background image with title Heading 1"
+    layout="fill"
+    placeholder="blur"
+    src="/img/red-dead-img.jpg"
+  />
+  <div
+    class="c1 c2 oi"
+  >
+    <div
+      class="c3 c4"
+    >
+      <h2
+        class="c5"
+        color="white"
+      >
+        Heading 1
+      </h2>
+      <h3
+        class="c6 subtitle"
+        color="white"
+      >
+        Heading 2
+      </h3>
+      <a
+        class="c7 c8"
+        href="https://any"
+      >
+        <span>
+          Buy now
+        </span>
+      </a>
+    </div>
+  </div>
+</div>
+`;
