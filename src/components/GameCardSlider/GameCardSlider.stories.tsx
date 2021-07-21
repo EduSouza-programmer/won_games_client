@@ -5,7 +5,7 @@ import items from "./GameCardSlider.mock";
 import GameCardSlider, { GameCardSliderProps } from ".";
 
 export default {
-  title: "Components/GameCardSlider",
+  title: "Components/Game/GameCardSlider",
   component: GameCardSlider,
   argTypes: {
     items: {
@@ -14,9 +14,20 @@ export default {
       control: { type: "object" },
 
       table: {
-        category: "logics",
+        category: "objects",
         type: {
-          summary: "GameCArdProps[]",
+          summary: "GameCardProps[]",
+          detail: `{
+            title: string;
+            developer: string;
+            img: string;
+            gamePrice: PriceProps;
+            favorite?: boolean;
+            onFav?: () => void;
+            ribbon?: React.ReactNode;
+            ribbonColor?: RibbonColors;
+            ribbonSize?: RibbonSizes;
+          }`,
         },
       },
     },
@@ -29,7 +40,7 @@ export default {
         category: "choices",
         type: {
           summary: "white | black",
-          detail: "Arrows in @media (min-width:1170px)",
+          detail: `Arrows in @media (min-width:1170px)`,
         },
       },
     },
