@@ -11,36 +11,46 @@ const items: GameCardProps[] = [
     title: "Poulation Zero 1",
     developer: "Rockstar GAmes",
     img: "https://source.unsplash.com/user/willianjusten/300x145",
-    price: "R$ 235,00",
-    promotionalPrice: "R$ 215,00",
+    gamePrice: {
+      price: "R$ 235,00",
+      promotionalPrice: "R$ 215,00",
+    },
   },
   {
     title: "Poulation Zero 2",
     developer: "Rockstar GAmes",
     img: "https://source.unsplash.com/user/willianjusten/300x145",
-    price: "R$ 235,00",
-    promotionalPrice: "R$ 215,00",
+    gamePrice: {
+      price: "R$ 235,00",
+      promotionalPrice: "R$ 215,00",
+    },
   },
   {
     title: "Poulation Zero 3",
     developer: "Rockstar GAmes",
     img: "https://source.unsplash.com/user/willianjusten/300x145",
-    price: "R$ 235,00",
-    promotionalPrice: "R$ 215,00",
+    gamePrice: {
+      price: "R$ 235,00",
+      promotionalPrice: "R$ 215,00",
+    },
   },
   {
     title: "Poulation Zero 4",
     developer: "Rockstar GAmes",
     img: "https://source.unsplash.com/user/willianjusten/300x145",
-    price: "R$ 235,00",
-    promotionalPrice: "R$ 215,00",
+    gamePrice: {
+      price: "R$ 235,00",
+      promotionalPrice: "R$ 215,00",
+    },
   },
   {
     title: "Poulation Zero 5",
     developer: "Rockstar GAmes",
     img: "https://source.unsplash.com/user/willianjusten/300x145",
-    price: "R$ 235,00",
-    promotionalPrice: "R$ 215,00",
+    gamePrice: {
+      price: "R$ 235,00",
+      promotionalPrice: "R$ 215,00",
+    },
   },
 ];
 
@@ -77,11 +87,5 @@ describe("<GameCardSlider />", () => {
     expect(screen.getByLabelText(/next games/i)).toHaveStyle({
       color: "#030517",
     });
-  });
-
-  it("should render with match snapshot", () => {
-    const { container } = renderWithTheme(<GameCardSlider items={items} />);
-
-    expect(container.firstChild).toMatchSnapshot();
   });
 });
