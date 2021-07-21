@@ -48,6 +48,7 @@ declare module "styled-components" {
         huge: string;
         large: string;
         medium: string;
+        xmedium: string;
         small: string;
         xsmall: string;
       },

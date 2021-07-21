@@ -33,6 +33,7 @@ declare module "@material-ui/core/styles/createMuiTheme" {
         huge: string;
         large: string;
         medium: string;
+        xmedium: string;
         small: string;
         xsmall: string;
       },
@@ -70,6 +71,7 @@ declare module "@material-ui/core/styles/createMuiTheme" {
         huge: string;
         large: string;
         medium: string;
+        xmedium: string;
         small: string;
         xsmall: string;
       },
