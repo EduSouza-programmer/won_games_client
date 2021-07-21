@@ -7,8 +7,8 @@ export type LineColor = "primary" | "secondary";
 export type Size = "small" | "medium" | "huge" | undefined;
 
 export type ResponsiveFontSizes = {
-  minFontSizes: number;
-  maxFontSizes: number;
+  min: number;
+  max: number;
   isNoWrapperText?: boolean;
 };
 
