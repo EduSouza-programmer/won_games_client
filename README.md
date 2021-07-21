@@ -77,7 +77,7 @@ Esse projeto está sendo desenvolvido com as seguintes tecnologias:
 
 ## :postbox: Entrega
 
-Atualmente estou desenvolvendo esse projeto neste curso, abaixo você têm um preview de como esta ficando muito bacana e todo responsivo :smile:.
+Atualmente estou desenvolvendo esse projeto neste curso, abaixo você segue um preview de como está ficando muito bacana e não esquecendo a regra, todo responsivo :smile:.
 Tomei a liberdade, didaticamente falando, de refatorar algumas coisas, ou seja ele não é apenas um copia dos ensinamentos do curso, inclusive o próprio boilerplate. Espero que gostem! :rocket: 
 #### Concluído :clipboard:
 
