@@ -1,13 +1,16 @@
 import { fireEvent, screen } from "@testing-library/react";
 import { renderWithTheme } from "@/utils/tests/helpers";
 
-import GameCard from ".";
+import GameCard, { GameCardProps } from ".";
 
-const propsRequired = {
+const propsRequired: GameCardProps = {
   title: "Population Zero",
   developer: "Other Ocean",
   img: "/img/population-zero.jpg",
-  price: "R$ 235,00",
+  gamePrice: {
+    price: "R$ 210,00",
+    promotionalPrice: "R$ 190,00",
+  },
 };
 
 describe("<GameCard />", () => {
@@ -40,35 +43,12 @@ describe("<GameCard />", () => {
   it("should render price in label by default", () => {
     renderWithTheme(<GameCard {...propsRequired} />);
 
-    const price = screen.getByLabelText(/price/i);
-
-    expect(price).not.toHaveStyle({
-      "text-decoration": "line-through",
-    });
-
-    expect(price).toHaveStyle({
-      "background-color": "#3CD3C1",
-    });
+    expect(screen.getByText("R$ 210,00")).toBeInTheDocument();
   });
 
-  it("should render a line-through in price when promotional", () => {
-    renderWithTheme(
-      <GameCard {...propsRequired} promotionalPrice="R$ 190,00" />
-    );
-
-    const prices = screen.getAllByLabelText(/price/i);
-
-    expect(prices[0]).toHaveStyle({
-      "text-decoration": "line-through",
-    });
-
-    expect(prices[0].getAttribute("aria-roledescription")).toBe(
-      "this price has been promoted a discount"
-    );
-
-    expect(prices[1]).not.toHaveStyle({
-      "text-decoration": "line-through",
-    });
+  it("should render a promotional", () => {
+    renderWithTheme(<GameCard {...propsRequired} />);
+    expect(screen.getByText("R$ 190,00")).toBeInTheDocument();
   });
 
   it("should render a filled Favorite icon when favorite is true", () => {
@@ -105,11 +85,5 @@ describe("<GameCard />", () => {
     expect(ribbon).toHaveStyle({
       height: "2.6rem",
     });
-  });
-
-  it("should render with match snapshot", () => {
-    const { container } = renderWithTheme(<GameCard {...propsRequired} />);
-
-    expect(container.firstChild).toMatchSnapshot();
   });
 });

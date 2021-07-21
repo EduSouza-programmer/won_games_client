@@ -4,7 +4,7 @@ import styled from "styled-components";
 import GameCard, { GameCardProps } from ".";
 
 export default {
-  title: "Components/GameCard",
+  title: "Components/Game/GameCard",
   component: GameCard,
   argTypes: {
     title: {
@@ -44,38 +44,31 @@ export default {
         },
       },
     },
-    price: {
+    gamePrice: {
       type: { required: true },
-      description: "GameCarde price game",
-      control: { type: "text" },
+      description: "GameCard price",
+      control: { type: "object" },
 
       table: {
-        category: "texts",
+        category: "objects",
         type: {
-          summary: "string",
-        },
-      },
-    },
-    promotionalPrice: {
-      description: "Discount price game",
-      control: { type: "text" },
-
-      table: {
-        category: "texts",
-        type: {
-          summary: "string",
+          summary: "PriceProps",
+          detail: `{
+            price: string;
+            promotionalPrice?: string;
+          }`,
         },
       },
     },
     favorite: {
       description: "Checkbox favorite icon for game",
-      options: [true, false],
       control: { type: "boolean" },
 
       table: {
         category: "choices",
         type: {
           summary: "boolean",
+          detail: "true | false",
         },
       },
     },
@@ -88,6 +81,7 @@ export default {
         category: "logics",
         type: {
           summary: "function",
+          detail: "() => void",
         },
       },
     },
@@ -99,6 +93,8 @@ export default {
         category: "texts",
         type: {
           summary: "React.ReactNode",
+          detail:
+            "type ReactNode = boolean | ReactChild | ReactFragment | ReactPortal | null | undefined",
         },
       },
     },
@@ -110,7 +106,8 @@ export default {
       table: {
         category: "choices",
         type: {
-          summary: "primary | secondary",
+          summary: "RibbonColors",
+          detail: `type RibbonColors = "primary" | "secondary" | "red"`,
         },
       },
     },
@@ -122,7 +119,8 @@ export default {
       table: {
         category: "choices",
         type: {
-          summary: "normal | small",
+          summary: "RibbonSizes",
+          detail: `type RibbonSizes = "normal" | "small"`,
         },
       },
     },
@@ -131,7 +129,9 @@ export default {
     title: "Population Zero",
     developer: "Other Ocean",
     img: "/img/population-zero.jpg",
-    price: "R$ 235,00",
+    gamePrice: {
+      price: "R$ 235,00",
+    },
     favorite: false,
   },
   parameters: {
@@ -159,7 +159,10 @@ export const PromotionalPrice: Story<GameCardProps> = (args) => (
 );
 
 PromotionalPrice.args = {
-  promotionalPrice: "R$ 190,00",
+  gamePrice: {
+    promotionalPrice: "R$ 190,00",
+    price: "R$ 235,00",
+  },
   ribbon: "20% OFF",
   ribbonColor: "primary",
   ribbonSize: "small",
