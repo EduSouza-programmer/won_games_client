@@ -166,8 +166,8 @@ ResponsiveSize.parameters = {
 
 ResponsiveSize.args = {
   responsiveSize: {
-    minFontSizes: 28,
-    maxFontSizes: 200,
+    min: 28,
+    max: 200,
     isNoWrapperText: true,
   },
 };

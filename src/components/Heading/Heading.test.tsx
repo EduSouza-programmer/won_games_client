@@ -185,8 +185,8 @@ describe("<Heading />", () => {
     renderWithTheme(
       <Heading
         responsiveSize={{
-          minFontSizes: 16,
-          maxFontSizes: 52,
+          min: 16,
+          max: 52,
           isNoWrapperText: true,
         }}
       >
@@ -203,8 +203,8 @@ describe("<Heading />", () => {
     renderWithTheme(
       <Heading
         responsiveSize={{
-          minFontSizes: 16,
-          maxFontSizes: 52,
+          min: 16,
+          max: 52,
           isNoWrapperText: true,
         }}
         size="small"

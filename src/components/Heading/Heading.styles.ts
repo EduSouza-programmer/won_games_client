@@ -103,12 +103,12 @@ const wrapperModifiers = {
 
   responsiveSize: (theme: DefaultTheme, obj: ResponsiveFontSizes) => css`
     font-size: calc(
-      ${obj.minFontSizes}px + (${obj.maxFontSizes} - ${obj.minFontSizes}) *
+      ${obj.min}px + (${obj.max} - ${obj.min}) *
         ((100vw - 320px) / (1920 - 320))
     );
 
     ${theme.media.greaterThan("xhuge")`
-      font-size: ${obj.maxFontSizes}px;
+      font-size: ${obj.max}px;
     `}
 
     ${obj.isNoWrapperText &&
