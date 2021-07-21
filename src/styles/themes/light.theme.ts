@@ -128,6 +128,7 @@ export default responsiveFontSizes(
       huge: "1440px",
       large: "1170px",
       medium: "769px",
+      xmedium: "530px",
       small: "450px",
       xsmall: "350px",
     }),
@@ -142,6 +143,9 @@ export default responsiveFontSizes(
             fontSize: "62.5%",
           },
           button: {
+            cursor: "pointer",
+          },
+          a: {
             cursor: "pointer",
           },
           "@font-face": [fontPoppins300, fontPoppins400, fontPoppins600],
