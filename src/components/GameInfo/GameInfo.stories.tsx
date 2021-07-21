@@ -23,7 +23,7 @@ const defaultDecorator = (Story: Story): StoryFnReactReturnType => (
 );
 
 export default {
-  title: "GameInfo",
+  title: "Components/Game/GameInfo",
   component: GameInfo,
   argTypes: {
     title: {
