@@ -1,4 +1,4 @@
-import styled, { css, DefaultTheme } from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.article`
   ${({ theme }) => css`
@@ -102,10 +102,14 @@ export const BuyBox = styled.div`
     align-items: center;
     justify-content: flex-end;
     margin-top: ${theme.spacings.xxsmall};
+
+    .price {
+      margin-right: calc(${theme.spacings.xxsmall} / 2);
+    }
   `}
 `;
 
-type PriceProps = {
+/* type PriceProps = {
   isPromotional?: boolean;
 };
 
@@ -136,4 +140,4 @@ export const Price = styled.div<PriceProps>`
     ${!isPromotional && priceModifiers.defaultPrice(theme)}
     ${isPromotional && priceModifiers.promotionalPrice(theme)}
   `}
-`;
+`; */
