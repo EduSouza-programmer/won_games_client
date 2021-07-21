@@ -5,6 +5,7 @@ import { Favorite } from "@styled-icons/material-outlined/Favorite";
 import { AddShoppingCart } from "@styled-icons/material-outlined/AddShoppingCart";
 
 import Button from "@/components/Button";
+import Price, { PriceProps } from "@/components/Price";
 import Ribbon, { RibbonColors, RibbonSizes } from "@/components/Ribbon";
 
 import * as S from "./GameCard.styles";
@@ -13,8 +14,7 @@ export type GameCardProps = {
   title: string;
   developer: string;
   img: string;
-  price: string;
-  promotionalPrice?: string;
+  gamePrice: PriceProps;
   favorite?: boolean;
   onFav?: () => void;
   ribbon?: React.ReactNode;
@@ -26,8 +26,7 @@ function GameCard({
   title,
   developer,
   img,
-  price,
-  promotionalPrice,
+  gamePrice,
   favorite = false,
   onFav,
   ribbon,
@@ -68,7 +67,8 @@ function GameCard({
         </S.FavButton>
 
         <S.BuyBox>
-          {!!promotionalPrice && (
+          <Price className="price" {...gamePrice} />
+          {/*  {!!promotionalPrice && (
             <S.Price
               aria-label="price"
               aria-roledescription="this price has been promoted a discount"
@@ -77,7 +77,7 @@ function GameCard({
               {price}
             </S.Price>
           )}
-          <S.Price aria-label="price">{promotionalPrice || price}</S.Price>
+          <S.Price aria-label="price">{promotionalPrice || price}</S.Price> */}
           <Button
             aria-label="Add to ShoppingCart"
             icon={<AddShoppingCart />}
