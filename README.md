@@ -6,10 +6,10 @@
   Curso realizado com Willian Justen - Edu Souza o/
 </h3>
 
-<blockquote align="center">“O sábio nunca diz tudo o que pensa, mas pensa sempre tudo o que diz - Aristóteles.”</blockquote>
+<blockquote align="center">“Nunca é perdido o tempo dedicado ao trabalho - Ralph Waldo Emerson”</blockquote>
 
 <h4 align="center">
-  Repositório - Construa uma Landing Page
+  Repositório - React Avançado
 </h4>
 
 <br/>
@@ -39,9 +39,11 @@
 
 ## :rocket: Sobre o curso
 
-#### Construa uma Landing Page
+#### React Avançado
 
-Este foi um projeto a parte dentro do curso React Avançado ministrado por Willian Justen. Criamos a landing page sendo alimentada pelo cms headless strapi, depois realizamos o deploy na netlify :rocket:.
+Neste curso estamos criando um e-commerce de jogos, incluindo toda a parte de pagamentos e área do cliente. Os clientes poderão fazer buscas, filtrar, adicionar ao carrinho e comprar seus jogos favoritos.
+
+Temos como backend um CMS completamente customizado ([Strapi](https://strapi.io/)) para que os administradores possam adicionar produtos, categorias, plataformas, criar promoções, editar partes do site, além de emails automatizados para às vendas de cada produto.
 
 #### Screenshots:
 
@@ -75,6 +77,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## :postbox: Entrega
 
+Atualmente estou desenvolvendo esse projeto neste curso, baixo você têm um preview de como esta ficando muito bacana e todo responsivo :smile:.
+Tomei a liberdade, didaticamente falando, de refatorar algumas coisas, ou seja ele não é apenas um copia dos ensinamentos do curso, inclusive o próprio boilerplate. Espero que gostem! :rocket: 
 #### Concluído :clipboard:
 
 Acesse o deploy do projeto [aqui](https://edu-souza-landing-page.netlify.app/).
