@@ -1,14 +1,19 @@
 import { Story, Meta } from "@storybook/react/types-6-0";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { StoryFnReactReturnType } from "@storybook/react/dist/ts3.9/client/preview/types";
 
 import GameDetails, { GameDetailsProps } from ".";
+import gameDetailsMock from "./GameDetails.mock";
 
 const WrapperCenter = styled.div`
-  display: grid;
-  align-items: center;
-  justify-items: center;
-  height: 100vh;
+  ${({ theme }) => css`
+    display: grid;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 120rem;
+    height: 100vh;
+    padding: 0 ${theme.spacings.xsmall};
+  `}
 `;
 
 const defaultDecorator = (Story: Story): StoryFnReactReturnType => (
@@ -18,35 +23,110 @@ const defaultDecorator = (Story: Story): StoryFnReactReturnType => (
 );
 
 export default {
-  title: "GameDetails",
+  title: "Components/Game/GameDetails",
   component: GameDetails,
   argTypes: {
-    example: {
-      description: "",
-      control: { type: "" },
-      options: ["small", "medium", "large"],
+    developer: {
+      type: { required: true },
+      description: "Game developer",
+      control: { type: "text" },
+
+      table: {
+        category: "texts",
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    platforms: {
+      type: { required: true },
+      description: "platform the game can run",
+      options: ["windows", "linux", "mac"],
+      control: { type: "inline-check" },
 
       table: {
         category: "choices",
         type: {
-          summary: "small | medium | large",
-          detail: "",
+          summary: "Platform[]",
+          detail: `type Platform = "windows" | "linux" | "mac"`,
+        },
+      },
+    },
+    releaseDate: {
+      type: { required: true },
+      description: "Game release",
+      control: { type: "date" },
+
+      table: {
+        category: "choices",
+        type: {
+          summary: "date",
+        },
+      },
+    },
+    publisher: {
+      type: { required: true },
+      description: "Game publisher",
+      control: { type: "texts" },
+
+      table: {
+        category: "texts",
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    rating: {
+      type: { required: true },
+      description: "Game rating",
+      options: ["BR0", "BR10", "BR12", "BR14", "BR16", "BR18"],
+      control: { type: "select" },
+
+      table: {
+        category: "choices",
+        type: {
+          summary: "Rating",
+          detail: `type Rating = "BR0" | "BR10" | "BR12" | "BR14" | "BR16" | "BR18"`,
+        },
+      },
+    },
+    genres: {
+      type: { required: true },
+      description: "Game genres",
+      options: ["Adventure", "Action"],
+      control: { type: "inline-check" },
+
+      table: {
+        category: "choices",
+        type: {
+          summary: "string[]",
         },
       },
     },
   },
-  args: {},
+  args: gameDetailsMock,
   parameters: {
     viewport: {
       defaultViewport: "mobile1",
     },
     backgrounds: {
-      default: "light",
+      default: "won-dark",
     },
     layout: "fullscreen",
-    controls: { hideNoControlsWarning: true },
   },
   decorators: [defaultDecorator],
 } as Meta<GameDetailsProps>;
 
-export const Default: Story<GameDetailsProps> = () => <GameDetails />;
+export const Default: Story<GameDetailsProps> = (args) => (
+  <GameDetails {...args} />
+);
+
+export const Desktop: Story<GameDetailsProps> = (args) => (
+  <GameDetails {...args} />
+);
+
+Desktop.parameters = {
+  viewport: {
+    defaultViewport: "desktop",
+  },
+};
