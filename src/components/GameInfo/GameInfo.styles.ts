@@ -4,7 +4,7 @@ import Heading from "@/components/Heading";
 
 export const Description = Heading;
 
-export const Wrapper = styled.main`
+export const Wrapper = styled.div`
   ${({ theme }) => css`
     position: relative;
     background-color: ${theme.palette.white.main};

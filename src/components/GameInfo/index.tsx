@@ -22,7 +22,7 @@ function GameInfo({ title, description, gamePrice }: GameInfoProps) {
         <Price className="price" {...gamePrice} />
       </S.Container>
       <S.Description
-        responsiveSize={{ minFontSizes: 14, maxFontSizes: 18 }}
+        responsiveSize={{ min: 14, max: 18 }}
         color="black"
         as="p"
         className="description"
