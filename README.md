@@ -56,7 +56,7 @@ Temos como backend um CMS completamente customizado ([Strapi](https://strapi.io/
 
 ## <img height="30" src="https://raw.githubusercontent.com/EduSouza-programmer/EduSouza-programmer/main/assets/stubparrot.gif"> Tecnologias
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+Esse projeto está sendo desenvolvido com as seguintes tecnologias:
 
 <table >
   <tr>
@@ -77,7 +77,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## :postbox: Entrega
 
-Atualmente estou desenvolvendo esse projeto neste curso, baixo você têm um preview de como esta ficando muito bacana e todo responsivo :smile:.
+Atualmente estou desenvolvendo esse projeto neste curso, abaixo você têm um preview de como esta ficando muito bacana e todo responsivo :smile:.
 Tomei a liberdade, didaticamente falando, de refatorar algumas coisas, ou seja ele não é apenas um copia dos ensinamentos do curso, inclusive o próprio boilerplate. Espero que gostem! :rocket: 
 #### Concluído :clipboard:
 
