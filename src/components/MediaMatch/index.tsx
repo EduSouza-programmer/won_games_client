@@ -1,6 +1,13 @@
 import styled, { css, DefaultTheme } from "styled-components";
 
-type breakpoint = "xhuge" | "huge" | "large" | "medium" | "small" | "xsmall";
+type breakpoint =
+  | "xhuge"
+  | "huge"
+  | "large"
+  | "medium"
+  | "xmedium"
+  | "small"
+  | "xsmall";
 
 export type MediaMatchProps = {
   lessThan?: breakpoint;

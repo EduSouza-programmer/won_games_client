@@ -7,6 +7,15 @@ export default {
   argTypes: {
     lessThan: {
       description: "Breakpoints media query max-width",
+      options: [
+        "xhuge",
+        "huge",
+        "large",
+        "medium",
+        "xmedium",
+        "small",
+        "xsmall",
+      ],
       control: { type: "select" },
 
       table: {
@@ -18,6 +27,7 @@ export default {
             huge: "1440px",
             large: "1170px",
             medium: "769px",
+            xmedium: "530px",
             small: "450px",
             xsmall: "350px",
           }`,
@@ -26,6 +36,15 @@ export default {
     },
     greaterThan: {
       description: "Breakpoints media query min-width",
+      options: [
+        "xhuge",
+        "huge",
+        "large",
+        "medium",
+        "xmedium",
+        "small",
+        "xsmall",
+      ],
       control: { type: "select" },
 
       table: {
@@ -37,6 +56,7 @@ export default {
             huge: "1440px",
             large: "1170px",
             medium: "769px",
+            xmedium: "530px",
             small: "450px",
             xsmall: "350px",
           }`,
@@ -108,6 +128,7 @@ export const lessThanExample: Story<MediaMatchProps> = (args) => {
               huge: "1440px",
               large: "1170px",
               medium: "769px",
+              xmedium: "530px",
               small: "450px",
               xsmall: "350px",
             },
@@ -145,6 +166,7 @@ export const greaterThanExample: Story<MediaMatchProps> = (args) => {
               huge: "1440px",
               large: "1170px",
               medium: "769px",
+              xmedium: "530px",
               small: "450px",
               xsmall: "350px",
             },
