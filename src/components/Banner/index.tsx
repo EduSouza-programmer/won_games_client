@@ -51,9 +51,7 @@ function Banner({
       {/* <S.Image src={img} role="img" aria-label={title} /> */}
       <S.Caption>
         {/*  <S.Title>{title}</S.Title> */}
-        <Heading responsiveSize={{ minFontSizes: 18, maxFontSizes: 30 }}>
-          {title}
-        </Heading>
+        <Heading responsiveSize={{ min: 18, max: 30 }}>{title}</Heading>
         <S.Subtitle dangerouslySetInnerHTML={{ __html: subtitle }} />
         <Button
           as="a"
