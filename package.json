@@ -15,6 +15,7 @@
     "test:staged": "yarn test --bail --findRelatedTests",
     "test:ci": "yarn test --bail --coverage",
     "test:watchFull": "yarn test --bail --coverage --findRelatedTests",
+    "build:coverage": "yarn test && yarn build",
     "storybook": "start-storybook -s ./public -p 6006",
     "storybook:cleancache": "start-storybook -s ./public -p 6006 --no-manager-cache",
     "build-storybook": "build-storybook -s ./public",
