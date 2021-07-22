@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "deploy": "yarn build && next export",
     "prepare": "husky install",
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "lint": "eslint src --max-warnings=0",
