@@ -128,7 +128,7 @@ export default {
   args: {
     title: "Population Zero",
     developer: "Other Ocean",
-    img: "/img/population-zero.jpg",
+    img: "./img/population-zero.jpg",
     gamePrice: {
       price: "R$ 235,00",
     },
