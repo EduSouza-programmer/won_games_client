@@ -90,18 +90,18 @@ Esse projeto está sendo desenvolvido com as seguintes tecnologias:
 
 ## :postbox: Entrega
 
-Atualmente estou desenvolvendo esse projeto, abaixo segue um preview de como está ficando muito bacana, e claro não esquecendo a regra, todo responsivo :smile:.
-Tomei a liberdade...didaticamente falando, de refatorar algumas coisas, ou seja ele não é apenas um copia dos ensinamentos do curso, inclusive o meu próprio boilerplate. Espero que gostem! :rocket: 
+Atualmente estou desenvolvendo esse projeto, abaixo segue um preview do mesmo, está ficando muito legal! E claro não esquecendo a regra, todo responsivo :smile:.
+Tomei a liberdade...didaticamente falando, de refatorar algumas coisas, ou seja este projeto não é apenas um copia dos ensinamentos do curso, inclusive o meu próprio boilerplate. Espero que gostem! :rocket: 
 #### Em andamento :clipboard:
 
 Acesse o deploy do projeto [aqui](https://edu-won-games-client-deploy.vercel.app/).
 
 #### Revisão :beers:
 
-Para documentação estou utilizando storybook, para testes coverage lcov-report e metodologia ágil o kanban, abaixo estão os links para maiores detalhes.
+Para documentação estou utilizando storybook, para testes o jest com coverage lcov-report e metodologia ágil, o kanban.
 
 Acesse o deploy do storybook [aqui](https://edu-won-games-storybook.netlify.app/?path=/story/components-banner--mobile&globals=measureEnabled:false). <br/>
-Acesse o deploy do test coverage [aqui]().
+Acesse o kanban do projeto [aqui](https://github.com/EduSouza-programmer/won_games_client/projects/1).
 
 #
 ## :unlock: Licença
