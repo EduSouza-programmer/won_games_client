@@ -90,7 +90,7 @@ Esse projeto está sendo desenvolvido com as seguintes tecnologias:
 
 ## :postbox: Entrega
 
-Atualmente estou desenvolvendo esse projeto, abaixo você um preview de como está ficando muito bacana, e claro não esquecendo a regra, todo responsivo :smile:.
+Atualmente estou desenvolvendo esse projeto, abaixo um preview de como está ficando muito bacana, e claro não esquecendo a regra, todo responsivo :smile:.
 Tomei a liberdade...didaticamente falando, de refatorar algumas coisas, ou seja ele não é apenas um copia dos ensinamentos do curso, inclusive o meu próprio boilerplate. Espero que gostem! :rocket: 
 #### Em andamento :clipboard:
 
@@ -100,7 +100,7 @@ Acesse o deploy do projeto [aqui](https://edu-won-games-client-deploy.vercel.app
 
 Para documentação estou utilizando storybook e para testes coverage lcov-report, abaixo estão os links para maiores detalhes.
 
-Acesse o deploy do storybook [aqui](https://edu-won-games-storybook.netlify.app/). <br/>
+Acesse o deploy do storybook [aqui](https://edu-won-games-storybook.netlify.app/?path=/story/components-banner--mobile&globals=measureEnabled:false). <br/>
 Acesse o deploy do test coverage [aqui]().
 
 #
