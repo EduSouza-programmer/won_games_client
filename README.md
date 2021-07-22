@@ -45,7 +45,19 @@ Neste curso estamos criando um e-commerce de jogos, incluindo toda a parte de pa
 
 Temos como backend um CMS completamente customizado ([Strapi](https://strapi.io/)) para que os administradores possam adicionar produtos, categorias, plataformas, criar promoções, editar partes do site, além de emails automatizados para às vendas de cada produto.
 
-#### Screenshots:
+#### Screenshots / GIF's:
+
+
+
+<details>
+<summary>GIF's</summary>
+<br/>
+<p align=center >
+  <img height="500px"  src="./public/img/home_desktop.gif"> &nbsp; &nbsp;
+</p>
+</details>
+
+<br/>
 
 <p align=center >
   <img height="210px"  src="./public/img/home_desktop.png"> &nbsp; &nbsp;
@@ -81,7 +93,14 @@ Atualmente estou desenvolvendo esse projeto neste curso, abaixo você segue um p
 Tomei a liberdade, didaticamente falando, de refatorar algumas coisas, ou seja ele não é apenas um copia dos ensinamentos do curso, inclusive o próprio boilerplate. Espero que gostem! :rocket: 
 #### Concluído :clipboard:
 
-Acesse o deploy do projeto [aqui](https://edu-souza-landing-page.netlify.app/).
+Acesse o deploy do projeto [aqui](https://edu-won-games-client-dun.vercel.app/).
+
+#### Revisão :memo:
+
+Para documentação estou utilizando storybook e para testes coverage lcov-report, abaixo estão os links.
+
+Acesse o deploy do storybook [aqui](). <br/>
+Acesse o deploy do test coverage [aqui]().
 
 #
 ## :unlock: Licença
