@@ -5,8 +5,8 @@ export default {
   subtitle: "Venha conhecer as novas aventuras de John Marston.",
   buttonLabel: "Buy now",
   buttonLink: "https://any",
-  backgroundImage: "/img/highlight-back-red-dead.jpg",
-  floatImage: "/img/highlight-float-red-dead.png",
+  backgroundImage: "./img/highlight-back-red-dead.jpg",
+  floatImage: "./img/highlight-float-red-dead.png",
 } as HighlightProps;
 
 export const highlightExample2 = {
@@ -14,8 +14,8 @@ export const highlightExample2 = {
   subtitle: "Borderlands está de volta com muitas novidades.",
   buttonLabel: "Buy now",
   buttonLink: "https://any",
-  backgroundImage: "/img/highlight-back-borderlands.jpg",
-  floatImage: "/img/highlight-float-borderlands.png",
+  backgroundImage: "./img/highlight-back-borderlands.jpg",
+  floatImage: "./img/highlight-float-borderlands.png",
 } as HighlightProps;
 
 export const highlightExample3 = {

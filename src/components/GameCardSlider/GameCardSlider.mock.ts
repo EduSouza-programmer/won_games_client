@@ -4,7 +4,7 @@ export default [
   {
     title: "Population Zero 1",
     developer: "Rockstar GAmes",
-    img: "/img/project-winter-thumb.jpg",
+    img: "./img/project-winter-thumb.jpg",
     gamePrice: {
       price: "R$ 235,00",
       promotionalPrice: "R$ 215,00",

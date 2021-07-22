@@ -108,7 +108,7 @@ export default {
     },
   },
   args: {
-    img: "/img/banner-desktop.jpg",
+    img: "./img/banner-desktop.jpg",
     title: "Defy death",
     subtitle: "<p>Play the new <strong>CrashLands</strong> season",
     buttonLabel: "Buy now",
