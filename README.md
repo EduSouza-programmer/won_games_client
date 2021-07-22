@@ -94,7 +94,7 @@ Atualmente estou desenvolvendo esse projeto neste curso, abaixo você segue um p
 Tomei a liberdade, didaticamente falando, de refatorar algumas coisas, ou seja ele não é apenas um copia dos ensinamentos do curso, inclusive o próprio boilerplate. Espero que gostem! :rocket: 
 #### Concluído :clipboard:
 
-Acesse o deploy do projeto [aqui](https://edu-won-games-client-dun.vercel.app/).
+Acesse o deploy do projeto [aqui](https://edu-won-games-client-deploy.vercel.app/).
 
 #### Revisão :beers:
 
