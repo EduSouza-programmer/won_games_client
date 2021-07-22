@@ -52,6 +52,7 @@ Temos como backend um CMS completamente customizado ([Strapi](https://strapi.io/
 <details>
 <summary>GIF's</summary>
 <br/>
+<p align=center>Suporte para 320px ~ 1920px</p>
 <p align=center >
   <img height="500px"  src="./public/img/home_desktop.gif"> &nbsp; &nbsp;
 </p>
