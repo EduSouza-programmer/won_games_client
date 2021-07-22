@@ -95,9 +95,9 @@ Tomei a liberdade, didaticamente falando, de refatorar algumas coisas, ou seja e
 
 Acesse o deploy do projeto [aqui](https://edu-won-games-client-dun.vercel.app/).
 
-#### Revisão :memo:
+#### Revisão :beers:
 
-Para documentação estou utilizando storybook e para testes coverage lcov-report, abaixo estão os links.
+Para documentação estou utilizando storybook e para testes coverage lcov-report, abaixo estão os links para maiores detalhes.
 
 Acesse o deploy do storybook [aqui](). <br/>
 Acesse o deploy do test coverage [aqui]().
